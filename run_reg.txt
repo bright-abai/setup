@@ -1,0 +1,1 @@
+regedit /s "D:\prevent_language.reg"

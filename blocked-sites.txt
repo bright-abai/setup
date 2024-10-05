@@ -1,0 +1,37 @@
+# 05.10.2024 add www to each domain
+
+Set-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "
+# first 30 entries
+# 8 major sites
+127.0.0.1 pornhub.com www.pornhub.com
+127.0.0.1 roblox.com www.roblox.com
+127.0.0.1 bluestacks.com www.bluestacks.com
+127.0.0.1 youtube.com www.youtube.com
+127.0.0.1 tiktok.com www.tiktok.com
+127.0.0.1 emupedia.net www.emupedia.net
+127.0.0.1 yandex.ru www.yandex.ru
+127.0.0.1 mail.ru www.mail.ru
+# 11 game sites
+127.0.0.1 poki.com www.poki.com
+127.0.0.1 ru-cs.ru www.ru-cs.ru
+127.0.0.1 cs-down.com www.cs-down.com
+127.0.0.1 download-cs.net www.download-cs.net
+127.0.0.1 all-cs.ru www.all-cs.ru
+127.0.0.1 csrus.net www.csrus.net
+127.0.0.1 vseigru.net www.vseigru.net
+127.0.0.1 igroutka.ru www.igroutka.ru
+127.0.0.1 download-cs.net www.download-cs.net
+127.0.0.1 play-cs.com www.play-cs.com
+127.0.0.1 eaglecraft.com www.eaglecraft.com
+# 05.10.2024
+# 7 game sites and date of kahoot and blooket block
+127.0.0.1 blooket.com www.blooket.com play.blooket.com cryptohack.blooket.com
+127.0.0.1 kahoot.com www.kahoot.com kahoot.it www.kahoot.it
+127.0.0.1 igru.net www.igru.net
+127.0.0.1 crazygames.ru www.crazygames.ru
+127.0.0.1 krunker.io www.krunker.io
+127.0.0.1 1v1.lol www.1v1.lol
+127.0.0.1 topgames.com www.topgames.com
+" ; Get-Content -Path C:\Windows\System32\drivers\etc\hosts ; 
+
+
