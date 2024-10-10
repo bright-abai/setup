@@ -2,9 +2,7 @@
 
 :: Check if running as administrator
 net session >nul 2>&1
-if %errorLevel% == 0 (
-    echo Running with administrative privileges.
-) else (
+if %errorlevel% neq 0 (
     echo Please run this script as an administrator.
     pause
     exit /b 1
@@ -13,8 +11,9 @@ if %errorLevel% == 0 (
 :: Install OpenSSH Server
 powershell -command "Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' | Add-WindowsCapability -Online"
 
-:: Add firewall rule for SSH
-powershell -command "New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22"
+:: Add firewall rule for SSH if it doesn't already exist
+powershell -Command "if (-Not (Get-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -ErrorAction SilentlyContinue)) { New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 }"
+
 
 :: Set sshd service to start automatically
 powershell -command "Set-Service -Name sshd -StartupType 'Automatic'"
@@ -33,14 +32,6 @@ cd .ssh
 if not exist "authorized_keys" (
     type nul > authorized_keys
 )
-
-:: Set permissions: Disable inheritance and convert to explicit permissions
-icacls "%USERPROFILE%\.ssh" /inheritance:d
-icacls "%USERPROFILE%\.ssh\authorized_keys" /inheritance:d
-
-:: Remove all existing permissions and grant necessary ones
-icacls "%USERPROFILE%\.ssh" /grant:r "%USERNAME%:F" "SYSTEM:F"
-icacls "%USERPROFILE%\.ssh\authorized_keys" /grant:r "%USERNAME%:RW" "SYSTEM:F"
 
 :: Modify sshd_config to comment out Match Group administrators section
 set "configFile=C:\ProgramData\ssh\sshd_config"

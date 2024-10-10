@@ -2,29 +2,30 @@
 
 :: Check if running as administrator
 net session >nul 2>&1
-if %errorLevel% == 0 (
-    echo Running with administrative privileges.
-) else (
+if %errorlevel% neq 0 (
     echo Please run this script as an administrator.
     pause
     exit /b 1
 )
 
-:: Stop sshd service
-powershell -Command "Stop-Service sshd"
-
-:: Wait for a moment to ensure the service has stopped
-timeout /t 2 /nobreak >nul
+:: Stop sshd service to release any locks on files
+powershell -command "Stop-Service sshd"
 
 :: Create or overwrite authorized_keys file with your SSH key
-echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104>"%USERPROFILE%\.ssh\authorized_keys"
+echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104 > "%USERPROFILE%\.ssh\authorized_keys"
 
 :: Ensure the file is saved with UTF-8 encoding
 powershell -Command "Get-Content -Path '%USERPROFILE%\.ssh\authorized_keys' | Set-Content -Path '%USERPROFILE%\.ssh\authorized_keys' -Encoding UTF8"
 
-:: Restart sshd service to apply changes
+:: Remove all permissions and disable inheritance on .ssh directory
+icacls "%USERPROFILE%\.ssh" /inheritance:r /remove:g "Administrators" /remove:g "Users" /grant:r "%USERNAME%:F" "SYSTEM:F"
+
+:: Remove all permissions and disable inheritance on authorized_keys file
+icacls "%USERPROFILE%\.ssh\authorized_keys" /inheritance:r /remove:g "Administrators" /remove:g "Users" /grant:r "%USERNAME%:F" "SYSTEM:F"
+
+:: Start sshd service
 powershell -command "Start-Service sshd"
 
 echo.
-echo Applied public key.
+echo Applied public key with correct permissions.
 pause
