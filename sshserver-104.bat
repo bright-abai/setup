@@ -42,12 +42,6 @@ icacls "%USERPROFILE%\.ssh\authorized_keys" /inheritance:d
 icacls "%USERPROFILE%\.ssh" /grant:r "%USERNAME%:F" "SYSTEM:F"
 icacls "%USERPROFILE%\.ssh\authorized_keys" /grant:r "%USERNAME%:RW" "SYSTEM:F"
 
-:: Create or overwrite authorized_keys file with your SSH key
-echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104>"%USERPROFILE%\.ssh\authorized_keys"
-
-:: Ensure the file is saved with UTF-8 encoding
-powershell -Command "Get-Content -Path '%USERPROFILE%\.ssh\authorized_keys' | Set-Content -Path '%USERPROFILE%\.ssh\authorized_keys' -Encoding UTF8"
-
 :: Modify sshd_config to comment out Match Group administrators section
 set "configFile=C:\ProgramData\ssh\sshd_config"
 set "tempFile=%TEMP%\sshd_config.tmp"
