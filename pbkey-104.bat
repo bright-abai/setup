@@ -13,6 +13,9 @@ if %errorLevel% == 0 (
 :: Stop sshd service
 powershell -Command "Stop-Service sshd"
 
+:: Wait for a moment to ensure the service has stopped
+timeout /t 2 /nobreak >nul
+
 :: Create or overwrite authorized_keys file with your SSH key
 echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104>"%USERPROFILE%\.ssh\authorized_keys"
 
