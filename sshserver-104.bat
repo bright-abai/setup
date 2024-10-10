@@ -43,7 +43,7 @@ icacls "%USERPROFILE%\.ssh" /grant:r "%USERNAME%:F" "SYSTEM:F"
 icacls "%USERPROFILE%\.ssh\authorized_keys" /grant:r "%USERNAME%:RW" "SYSTEM:F"
 
 :: Add the SSH public key to authorized_keys with UTF-8 encoding
-powershell -Command "Add-Content -Path '$env:USERPROFILE\.ssh\authorized_keys' -Value 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104' -Encoding UTF8"
+powershell -Command "'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104' | Out-File -FilePath '$env:USERPROFILE\.ssh\authorized_keys' -Encoding utf8 -Append"
 
 :: Modify sshd_config to comment out Match Group administrators section
 set "configFile=C:\ProgramData\ssh\sshd_config"
