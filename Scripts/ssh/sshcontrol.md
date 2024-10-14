@@ -12,7 +12,8 @@
 
 ## Usage
 
-Run `ssh Admin@ST-10x-xx` ST-10x-xx is the name of the computer. You should login without password.
+- Run `ssh Admin@ST-10x-xx` ST-10x-xx is the name of the computer. You should login without password.
+- Run `shutdown_106.bat` to turn off computers remotely. This script also acts as an example for how to run commands on each computer.
 
 Hopefully i have documented my process fully.
 
