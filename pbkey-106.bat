@@ -8,14 +8,14 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Create or overwrite authorized_keys file with your SSH key
-echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDRjFCd+93HllSalNU7uXz0TyXgqi2C1Ezyu0RGSW3AL abai@TR-106 > "%USERPROFILE%\.ssh\104pbkey.txt"
-
 :: Ensure the file is saved with UTF-8 encoding
 powershell -Command "Get-Content -Path '%USERPROFILE%\.ssh\authorized_keys' | Set-Content -Path '%USERPROFILE%\.ssh\authorized_keys' -Encoding UTF8"
 
-powershell -Command "code '%USERPROFILE%\.ssh'"
+:: Paste the pubkey
+echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDRjFCd+93HllSalNU7uXz0TyXgqi2C1Ezyu0RGSW3AL abai@TR-106 > "%USERPROFILE%\.ssh\authorized_keys"
+
+powershell -Command "Invoke-Item '%USERPROFILE%\.ssh'"
 
 echo.
-echo Applied public key with correct permissions.
+echo WARNIING! You should setup correct permissions! Go to github.com/bright-abai/setup/sshcontrol.md for further instructions
 pause
