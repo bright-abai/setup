@@ -32,6 +32,10 @@ Set-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "
 127.0.0.1 krunker.io www.krunker.io
 127.0.0.1 1v1.lol www.1v1.lol
 127.0.0.1 topgames.com www.topgames.com
+# 16.10.2024
+127.0.0.1 msn.com www.msn.com
+127.0.0.1 jut.su www.jut.su
+127.0.0.1 jut-su.net www.jut-su.net
 " ; Get-Content -Path C:\Windows\System32\drivers\etc\hosts ; 
 
 
