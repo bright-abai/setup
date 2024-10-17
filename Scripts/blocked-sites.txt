@@ -1,5 +1,3 @@
-# 05.10.2024 add www to each domain
-
 Set-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "
 # first 30 entries
 # 8 major sites
@@ -32,6 +30,11 @@ Set-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "
 127.0.0.1 krunker.io www.krunker.io
 127.0.0.1 1v1.lol www.1v1.lol
 127.0.0.1 topgames.com www.topgames.com
-" ; Get-Content -Path C:\Windows\System32\drivers\etc\hosts ; 
+# 16.10.2024
+127.0.0.1 msn.com www.msn.com
+127.0.0.1 jut.su www.jut.su
+127.0.0.1 jut-su.net www.jut-su.net
+127.0.0.1 freegames.com www.freegames.com
+"
 
 
