@@ -35,6 +35,7 @@ Set-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "
 127.0.0.1 jut.su www.jut.su
 127.0.0.1 jut-su.net www.jut-su.net
 127.0.0.1 freegames.com www.freegames.com
+127.0.0.1 crazygames.com www.crazygames.com
 "
 
 
