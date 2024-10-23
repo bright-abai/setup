@@ -22,11 +22,9 @@
 
 [ssh](https://github.com/bright-abai/setup/blob/main/Scripts/ssh/README.md)
 
-```
-net user ST-xx /add
-```
-
 ## Misc
 
-1. `shell:AppsFolder`
-2. `ipconfig /flushdns`
+- `shell:AppsFolder`
+- `ipconfig /flushdns`
+- `net user ST-xx /add`
+- `powercfg /change monitor-timeout-ac 0 ; powercfg /change standby-timeout-ac 0`
