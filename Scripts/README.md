@@ -20,6 +20,8 @@
 
 [Win10 activation](https://massgrave.dev/)
 
+[ssh](https://github.com/bright-abai/setup/blob/main/Scripts/ssh/README.md)
+
 ```
 net user ST-xx /add
 ```
