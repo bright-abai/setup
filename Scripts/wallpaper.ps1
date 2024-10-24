@@ -1,3 +1,8 @@
+param (
+    [Parameter(Mandatory = $true)]
+    [string]$img
+)
+
 function Edit-Registry {
     param (
         [string]$username,
@@ -13,6 +18,9 @@ function Edit-Registry {
         Write-Host "Property $prop at $path updated for $username with $value, replacing $($current.$prop)"
     
     } catch {
+        if (-not (Test-Path $path)) {
+            New-Item -Path $path
+        }
         New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type
         Write-Host "Property $prop at $path created for $username with $value."
     }
@@ -20,16 +28,48 @@ function Edit-Registry {
     Write-Host "Completed"
 }
 
-param(
-    [Parameter(Mandatory = $true)]
-    [string]$img
-)
+function Edit-AccessRule {
+    param (
+        [string]$path
+    )
 
-$wallpapers = "C:\Users\Wallpapers"
+    $usrAcc = New-Object System.Security.Principal.NTAccount("ST-20")
+    $denyAccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($usrAcc, "Write", "Deny")
+    $denyAccessRuleDelete = New-Object System.Security.AccessControl.FileSystemAccessRule($usrAcc, "Delete", "Deny")
+
+    $acl = Get-Acl $path
+    $acl.SetAccessRuleProtection($true, $false) # Protects the ACL from inheritance, does not preserve existing rules
+    $acl.AddAccessRule($denyAccessRule)       # Deny write for everyone
+    $acl.AddAccessRule($denyAccessRuleDelete) # Deny delete for everyone
+
+    Set-Acl -Path $path -AclObject $acl
+}
+
+function Confirm-UserSID {
+    param (
+        [string]$sid,
+        [string]$name
+    )
+
+    if (Test-Path Registry::HKEY_USERS\$sid) {
+        Write-Host "$name is confirmed to have sid."
+        return $False
+    } 
+    try {
+        reg load "HKEY_USERS\$name" "C:\Users\$usr\NTUSER.DAT"
+        Write-Host "Loaded hive for $name"
+        return $True
+    } catch {
+        Write-Host "Failed to load the hive: $name"
+        return $False
+    }
+}
+
+$wallpapers = "C:\Users\Admin\Wallpapers"
 $srcUsrImg = Join-Path -Path $PSScriptRoot -ChildPath "numbers\$img.jpg"
 $srcAdmImg = Join-Path -Path $PSScriptRoot -ChildPath "Bright.jpg"
-$usrImg = "C:\Users\Wallpapers\$img.jpg"
-$admImg = "C:\Users\Wallpapers\Bright.jpg"
+$usrImg = "C:\Users\Admin\Wallpapers\$img.jpg"
+$admImg = "C:\Users\Admin\Wallpapers\Bright.jpg"
 
 if (-not (Test-Path -Path $wallpapers)) {
     New-Item -Path $wallpapers -ItemType Directory -Force
@@ -39,14 +79,33 @@ if (-not (Test-Path -Path $wallpapers)) {
 Copy-Item -Path $srcUsrImg -Destination $usrImg -Force
 Copy-Item -Path $srcAdmImg -Destination $admImg -Force
 
-Write-Host "Images copied to C:\Users\Wallpapers."
+Edit-AccessRule -path $usrImg
 
-$usr = (Get-LocalUser -Name "ST-20").SID
-$adm = (Get-LocalUser -Name "Admin").SID
+Write-Host "Images copied to C:\Users\Wallpapers. Access rule is modified for $usrImg"
 
-Edit-Registry -username "ST-20" -path "Registry::HKEY_USERS\$usr\software\microsoft\windows\currentVersion\policies\system" -prop "Wallpaper" -value $usrImg -type  "String"
-Edit-Registry -username "Admin" -path "Registry::HKEY_USERS\$usr\software\microsoft\windows\currentVersion\policies\system" -prop "WallpaperStyle" -value "3" -type  "String"
+$usr = "ST-20"
+$adm = "Admin"
 
-Edit-Registry -username "ST-20" -path "Registry::HKEY_USERS\$adm\software\microsoft\windows\currentVersion\policies\system" -prop "Wallpaper" -value $admImg -type  "String"
-Edit-Registry -username "Admin" -path "Registry::HKEY_USERS\$adm\software\microsoft\windows\currentVersion\policies\system" -prop "WallpaperStyle" -value "3" -type  "String"
+$usrSID = (New-Object System.Security.Principal.NTAccount($usr)).Translate([System.Security.Principal.SecurityIdentifier]).Value
+$admSID = (New-Object System.Security.Principal.NTAccount($adm)).Translate([System.Security.Principal.SecurityIdentifier]).Value
 
+$usrLoaded = Confirm-UserSID -sid $usrSID -name $usr
+$usrLoaded = Confirm-UserSID -sid $admSID -name $adm
+
+Edit-Registry -username "ST-20" -path "Registry::HKEY_USERS\$usrSID\software\microsoft\windows\currentVersion\policies\system" -prop "Wallpaper" -value $usrImg -type  "String"
+Edit-Registry -username "Admin" -path "Registry::HKEY_USERS\$usrSID\software\microsoft\windows\currentVersion\policies\system" -prop "WallpaperStyle" -value 3 -type  "DWord"
+
+Edit-Registry -username "ST-20" -path "Registry::HKEY_USERS\$admSID\software\microsoft\windows\currentVersion\policies\system" -prop "Wallpaper" -value $admImg -type  "String"
+Edit-Registry -username "Admin" -path "Registry::HKEY_USERS\$admSID\software\microsoft\windows\currentVersion\policies\system" -prop "WallpaperStyle" -value 3 -type  "DWord"
+
+if ($usrLoaded) {
+    reg unload "HKEY_USERS\$usr"
+    Write-Host "Unloaded hive for $usr"
+}
+if ($admLoaded) {
+    reg unload "HKEY_USERS\$adm"
+    Write-Host "Unloaded hive for $adm"
+}
+
+Edit-Registry -username "Machine" -path "Registry::HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\personalization" -prop "LockScreenImage" -value $usrImg -type  "String"
+Edit-Registry -username "Machine" -path "Registry::HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\personalization" -prop "NoChangingLockScreen" -value 1 -type  "DWord"
