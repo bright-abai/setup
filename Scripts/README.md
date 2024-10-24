@@ -28,3 +28,5 @@
 - `ipconfig /flushdns`
 - `net user ST-xx /add`
 - `powercfg /change monitor-timeout-ac 0 ; powercfg /change standby-timeout-ac 0`
+
+- Lock Screen source: https://community.spiceworks.com/t/is-it-possible-to-change-lock-screen-on-windows-10-pro-using-gpo/687090/9
