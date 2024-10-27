@@ -3,29 +3,6 @@ param (
     [string]$img
 )
 
-function Edit-Registry {
-    param (
-        [string]$username,
-        [string]$path,
-        [string]$prop,
-        [string]$value,
-        [string]$type
-    )
-
-    try {
-        $current = Get-ItemProperty -Path $path -Name $prop -ErrorAction Stop
-        Set-ItemProperty -Path $path -Name $prop -Value $value
-        Write-Host "Property $prop at $path updated for $username with $value, replacing $($current.$prop)"
-    
-    } catch {
-        if (-not (Test-Path $path)) {
-            New-Item -Path $path
-        }
-        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type
-        Write-Host "Property $prop at $path created for $username with $value."
-    }
-}
-
 function Edit-AccessRule {
     param (
         [string[]]$paths
