@@ -42,12 +42,12 @@ function Edit-Registry {
 function Edit-Registries {
     param(
         [string]$username
-        [string[][]] regs
+        [string[][]]$regs
     )
     
-    $sid = Load-Username -username $username
+    $sid = Load-Username -Username $username
     for ($i = 0; $i -lt $regs.Length; $i++) {
-        Edit-Registry -path $regs[$i][0] -prop $regs[$i][1] -type $regs[$i][2] -value $regs[$i][3]
+        Edit-Registry -Path $regs[$i][0] -Prop $regs[$i][1] -Type $regs[$i][2] -Value $regs[$i][3]
     }
     
     if ($sid[1]) {
