@@ -24,27 +24,30 @@ function Edit-Registry {
         New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type
         Write-Host "Property $prop at $path created for $username with $value."
     }
-
-    Write-Host "Completed"
 }
 
 function Edit-AccessRule {
     param (
-        [string]$path
+        [string[]]$paths
     )
 
-    $usrAcc = New-Object System.Security.Principal.NTAccount("ST-20")
-    $denyAccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($usrAcc, "Write", "Deny")
-    $denyAccessRuleDelete = New-Object System.Security.AccessControl.FileSystemAccessRule($usrAcc, "Delete", "Deny")
+    foreach ($p in $paths) {
+        $acl = Get-Acl $p
+        $system = "S-1-5-18"
+        $adms   = "S-1-5-32-544"
+        $usrs   = "S-1-5-32-545"
 
-    $acl = Get-Acl $path
-    $acl.SetAccessRuleProtection($true, $false) # Protects the ACL from inheritance, does not preserve existing rules
-    $acl.AddAccessRule($denyAccessRule)       # Deny write for everyone
-    $acl.AddAccessRule($denyAccessRuleDelete) # Deny delete for everyone
+        $acl.SetAccessRuleProtection($true, $false) # remove inheritance, remove other rules
+        $denyUsers  = New-Object System.Security.AccessControl.FileSystemAccessRule($usrs, "Delete, Modify", "Deny")
+        $acl.SetAccessRule($denyUsers)
+        $allowAdmins = New-Object System.Security.AccessControl.FileSystemAccessRule($adms, "FullControl", "Allow")
+        $acl.SetAccessRule($allowAdms)
+        $allowSystem = New-Object System.Security.AccessControl.FileSystemAccessRule($system, "FullControl", "Allow")
+        $acl.SetAccessRule($allowAdms)
 
-    Set-Acl -Path $path -AclObject $acl
+        Set-Acl -Path $p -AclObject $acl
+    }
 }
-
 
 
 $wallpapers = "C:\Users\Admin\Wallpapers"
@@ -91,3 +94,5 @@ if ($admLoaded) {
 
 Edit-Registry -username "Machine" -path "Registry::HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\personalization" -prop "LockScreenImage" -value $usrImg -type  "String"
 Edit-Registry -username "Machine" -path "Registry::HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\personalization" -prop "NoChangingLockScreen" -value 1 -type  "DWord"
+
+#RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters

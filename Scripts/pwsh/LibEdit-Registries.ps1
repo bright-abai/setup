@@ -19,8 +19,8 @@ function Edit-Registry {
     param (
         [string]$path,
         [string]$prop,
-        [string]$value,
-        [string]$type
+        [string]$type,
+        [string]$value
     )
 
     try {
@@ -34,18 +34,20 @@ function Edit-Registry {
     }
 }
 
+# 0 - path
+# 1 - property
+# 2 - type
+# 3 - value
+
 function Edit-Registries {
     param(
         [string]$username
-        [string[]]$path
-        [string[]]$prop
-        [string[]]$type
-        [string[]]$val
+        [string[][]] regs
     )
     
     $sid = Load-Username -username $username
-    for ($i = 0; $i -lt $path.Length; $i++) {
-        Edit-Registry -path $($path[$i]) -prop $($prop[$i]) -value $($val[$i]) -type $($type[$i])"
+    for ($i = 0; $i -lt $regs.Length; $i++) {
+        Edit-Registry -path $regs[$i][0] -prop $regs[$i][1] -type $regs[$i][2] -value $regs[$i][3]
     }
     
     if ($sid[1]) {
