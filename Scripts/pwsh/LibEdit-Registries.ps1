@@ -1,11 +1,3 @@
-param (
-    [Parameter(Mandatory = $true)][string]$username
-    [Parameter(Mandatory = $true)][string[]]$path
-    [Parameter(Mandatory = $true)][string[]]$prop
-    [Parameter(Mandatory = $true)][string[]]$type
-    [Parameter(Mandatory = $true)][string[]]$val
-)
-
 function Load-Username {
     param (
         [string]$username
@@ -42,11 +34,21 @@ function Edit-Registry {
     }
 }
 
-$sid = Load-Username -username $username
-for ($i = 0; $i -lt $path.Length; $i++) {
-    Edit-Registry -path $($path[$i]) -prop $($prop[$i]) -value $($val[$i]) -type $($type[$i])"
-}
-
-if ($sid[1]) {
-    reg unload
+function Edit-Registries {
+    param(
+        [string]$username
+        [string[]]$path
+        [string[]]$prop
+        [string[]]$type
+        [string[]]$val
+    )
+    
+    $sid = Load-Username -username $username
+    for ($i = 0; $i -lt $path.Length; $i++) {
+        Edit-Registry -path $($path[$i]) -prop $($prop[$i]) -value $($val[$i]) -type $($type[$i])"
+    }
+    
+    if ($sid[1]) {
+        reg unload
+    }
 }
