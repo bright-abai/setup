@@ -23,6 +23,10 @@ function Edit-Registry {
         [string]$value
     )
 
+    if (-not (Test-Path $path)) {
+        New-Item -Path $path -Force
+    }
+
     try {
         $current = Get-ItemProperty -Path $path -Name $prop -ErrorAction Stop
         Set-ItemProperty -Path $path -Name $prop -Value $value
