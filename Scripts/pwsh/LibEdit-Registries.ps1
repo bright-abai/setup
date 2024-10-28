@@ -29,11 +29,11 @@ function Edit-Registry {
 
     try {
         $current = Get-ItemProperty -Path $path -Name $prop -ErrorAction Stop
-        Set-ItemProperty -Path $path -Name $prop -Value $value
+        Set-ItemProperty -Path $path -Name $prop -Value $value 1>$null
         Write-Host "Property $prop at $path updated for $username with $value, replacing $($current.$prop)"
     
     } catch {
-        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type
+        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type 1>$null
         Write-Host "Property $prop at $path created for $username with $value."
     }
 }
@@ -45,7 +45,7 @@ function Edit-Registry {
 
 function Edit-Registries {
     param(
-        [string]$username
+        [string]$username,
         [string[][]]$regs
     )
     
