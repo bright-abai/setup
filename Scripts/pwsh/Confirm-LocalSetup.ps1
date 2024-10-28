@@ -6,7 +6,11 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 function Confirm-OpenSSH {
-    Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' | Add-WindowsCapability -Online
+    $openssh = Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
+    if ($openssh.State -ne 'Installed') {
+        Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+    }
+
 
     # Add firewall rule for SSH if it doesn't already exist
     if (-not (Get-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -ErrorAction SilentlyContinue)) {
@@ -37,40 +41,44 @@ function Confirm-OpenSSH {
     Move-Item -Path $tempFile -Destination $configFile -Force
 
     Restart-Service sshd
-    Write-Host "`OpenSSH confirmed."
+    Write-Host "OpenSSH confirmed."
 }
 
 $wallpapersFolder = "C:\Wallpapers"
 $controlFolder = "C:\Control"
+$studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
 
 function Confirm-Folders {
     if (-Not (Test-Path $wallpapersFolder)) {
         New-Item -Path $wallpapersFolder -ItemType Directory -Force
-        $acl = Get-Acl $wallpapersFolder
-        $acl.SetAccessRuleProtection($true, $false)
-        $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-32-545", "Read", "Allow")
-        $acl.SetAccessRule($allowUsrs)
-        $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-32-545", "Delete, Modify", "Deny")
-        $acl.SetccessRule($denyUsrs)
-        $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-32-544", "FullControl", "Allow")
-        $acl.SetAccessRule($allowAdms)
-        $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-18" , "FullControl", "Allow")
-        $acl.SetAccessRule($AllowSys)
-        Set-Acl -Path $wallpapersFolder -AclObject $acl
     }
+    $acl = Get-Acl $wallpapersFolder
+    $acl.SetAccessRuleProtection($true, $false)
+    $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read", "Allow")
+    $acl.SetAccessRule($allowUsrs)
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Delete, Modify", "Deny")
+    $acl.SetAccessRule($denyUsrs)
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $acl.SetAccessRule($allowAdms)
+    $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
+    $acl.SetAccessRule($AllowSys)
+    Set-Acl -Path $wallpapersFolder -AclObject $acl
+    
 
     if (-Not (Test-Path $controlFolder)) {
         New-Item -Path $controlFolder -ItemType Directory -Force
-        $acl = Get-Acl $controlFolder
-        $acl.SetAccessRuleProtection($true, $false)
-        $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-32-545", "Read, Delete, Modify", "Deny")
-        $acl.SetccessRule($denyUsrs)
-        $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-32-544", "FullControl", "Allow")
-        $acl.SetAccessRule($allowAdms)
-        $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("S-1-5-18" , "FullControl", "Allow")
-        $acl.SetAccessRule($AllowSys)
-        Set-Acl -Path $controlFolder -AclObject $acl
     }
+    $acl = Get-Acl $controlFolder
+    $acl.SetAccessRuleProtection($true, $false)
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read, Delete, Modify", "Deny")
+    $acl.SetAccessRule($denyUsrs)
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $acl.SetAccessRule($allowAdms)
+    $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
+    $acl.SetAccessRule($AllowSys)
+    Set-Acl -Path $controlFolder -AclObject $acl
+    
+    Write-Host "Folders confirmed"
 }
 
 Confirm-OpenSSH
