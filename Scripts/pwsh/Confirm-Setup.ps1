@@ -81,5 +81,34 @@ function Confirm-Folders {
     Write-Host "Folders confirmed"
 }
 
+function Confirm-Files {
+    Copy-Item -Path "$PSScriptRooot\numbers" -Destination $controlFolder
+    Copy-Item -Path "$PSScriptRooot\bright.jpg" -Destination [System.IO.Path]::Combine($controlFolder, "admin.jpg")
+
+    $acl = Get-Acl $controlFolder
+    $items = Get-ChildItem -Path $folderPath -Recurse
+    foreach ($item in $items) {
+        try {
+            Set-Acl -Path $item.FullName -AclObject $acl
+        } catch {
+            Write-Host "Failed to apply permissions to: $($item.FullName) - $_"
+        }
+    }
+
+    $acl = Get-Acl $wallpapers
+    $items = Get-ChildItem -Path $folderPath -Recurse
+    foreach ($item in $items) {
+        try {
+            Set-Acl -Path $item.FullName -AclObject $acl
+        } catch {
+            Write-Host "Failed to apply permissions to: $($item.FullName) - $_"
+        }
+    }
+
+    Write-Host "Files confirmed"
+}
+
+
 Confirm-OpenSSH
 Confirm-Folders
+Confirm-Files
