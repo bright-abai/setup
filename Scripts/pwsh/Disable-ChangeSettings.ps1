@@ -2,7 +2,7 @@ param (
     [Parameter(Mandatory = $true)] [string]$username
 )
 
-. "$PSScriptRoot\LibEditRegistries.ps1"
+. "$PSScriptRoot\LibEdit-Registries.ps1"
 
 $regs = @(
     @("HKLM:\software\microsoft\policymanager\default\settings"                , "AllowLanguage"          , "DWord", "0"),
@@ -16,7 +16,7 @@ $regs = @(
     @("HKCU:\software\microsoft\windows\currentversion\policies\explorer"      , "NoMovingBands"          , "DWord", "1"),
     @("HKCU:\software\microsoft\windows\currentversion\policies\explorer"      , "NoActiveDesktop"        , "DWord", "1"),
     @("HKCU:\software\microsoft\windows\currentversion\policies\activedesktop" , "NoChangingWallPaper"    , "DWord", "1"),
-    @("HKCU:\software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "1"),
+    @("HKCU:\software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "1")
 )
 
-Edit-Regitries -Username $username -Regs $regs
+Edit-Registries -Username $username -Regs $regs
