@@ -16,7 +16,12 @@ function Edit-Registry {
         Write-Host "Property $prop at $path updated for $username with $value, replacing $($current.$prop)"
     
     } catch {
-        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type -Force 1>$null
+        try{ 
+            New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type -ErrorAction Stop -Force 1>$null  
+        } catch { 
+            throw "new itemprop fail, $path, $prop"
+        }
+        
         Write-Host "Property $prop at $path created for $username with $value."
     }
 }
@@ -30,16 +35,23 @@ function Edit-RegistriesUser {
     param(
         [string]$username,
         [string[][]]$regs
-    )
-    
-    reg load "HKEY_USERS\$username" "C:\Users\$username\NTUSER.DAT"
+    )  
+    $fileHive = "C:\Users\$username\NTUSER.DAT"
+    $regHiveLoad = "HKU\$username"
+    $regHiveEdit = "registry::HKEY_USERS:\$username"
 
+    if (-Not (Test-Path $fileHive)) { throw "Failed to find $fileHive" }
+
+    reg load $regHiveLoad $fileHive
+    if ($LASTEXITCODE -ne 0) { throw "Failed to load regHive $regHiveLoad $fileHive" }
+    if (-Not (Test-Path $regHiveLoad)) { throw "Failed to find $regHiveLoad" }
+    
     foreach ($reg in $regs) {
-        Edit-Registry -Path "HKU\$username\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
+        Edit-Registry -Path "$regHiveEdit\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
     
-    reg unload "HKU\$username"
-
+    reg unload $regHiveLoad 
+    if ($LASTEXITCODE -ne 0) { throw "Failed to unload regHive" }
 }
 
 function Edit-RegistriesMachine {
