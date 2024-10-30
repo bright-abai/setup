@@ -51,7 +51,7 @@ function Edit-Registries {
     
     $sid = Load-Username -Username $username
     for ($i = 0; $i -lt $regs.Length; $i++) {
-        Edit-Registry -Path $regs[$i][0] -Prop $regs[$i][1] -Type $regs[$i][2] -Value $regs[$i][3]
+        Edit-Registry -Path "HKU\$regs[$i][0]" -Prop $regs[$i][1] -Type $regs[$i][2] -Value $regs[$i][3]
     }
     
     if ($sid[1]) {
