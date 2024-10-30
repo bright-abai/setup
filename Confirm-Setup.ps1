@@ -56,7 +56,7 @@ function Confirm-Folders {
     $acl.SetAccessRuleProtection($true, $false)
     $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read", "Allow")
     $acl.SetAccessRule($allowUsrs)
-    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Delete, Modify", "Deny")
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Write", "Deny")
     $acl.SetAccessRule($denyUsrs)
     $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
     $acl.SetAccessRule($allowAdms)
@@ -86,17 +86,7 @@ function Confirm-Files {
     Copy-Item -Path "$PSScriptRooot\bright.jpg" -Destination [System.IO.Path]::Combine($controlFolder, "admin.jpg")
 
     $acl = Get-Acl $controlFolder
-    $items = Get-ChildItem -Path $folderPath -Recurse
-    foreach ($item in $items) {
-        try {
-            Set-Acl -Path $item.FullName -AclObject $acl
-        } catch {
-            Write-Host "Failed to apply permissions to: $($item.FullName) - $_"
-        }
-    }
-
-    $acl = Get-Acl $wallpapers
-    $items = Get-ChildItem -Path $folderPath -Recurse
+    $items = Get-ChildItem -Path $controlFolder -Recurse
     foreach ($item in $items) {
         try {
             Set-Acl -Path $item.FullName -AclObject $acl
