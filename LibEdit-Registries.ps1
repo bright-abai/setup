@@ -9,7 +9,7 @@ function Load-Username {
     if (-not (Test-Path Registry::HKEY_USERS\$sid)) {
         reg load "HKEY_USERS\$username" "C:\Users\$username\NTUSER.DAT"
         $sid = $username
-        $loaded = true
+        $loaded = $true
     } 
 
     return @($sid, $loaded)
