@@ -3,6 +3,11 @@ $controlFolder = "C:\Control"
 $studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
 $studentNumber = $studentName[-2..-1] -join ''
 
+if ($studentName.Length -eq 0) {
+    Write-Host "student was not found"
+    return
+}
+
 . "$PSScriptRoot\LibEdit-Registries.ps1"
 
 function Set-Wallpaper {
@@ -15,8 +20,8 @@ function Set-Wallpaper {
     Copy-Item -Path $sourceImage -Destination $destinationImage -Force
 
     $regs = @(
-        @("Registry::HKEY_USERS:\$sid\software\microsoft\windows\currentVersion\policies\system", "Wallpaper"     , "String", $destinationImage), #HKU is not found somehow
-        @("Registry::HKEY_USERS:\$sid\software\microsoft\windows\currentVersion\policies\system", "WallpaperStyle", "DWord" , 3)
+        @("software\microsoft\windows\currentVersion\policies\system", "Wallpaper"     , "String", $destinationImage), #HKU is not found somehow
+        @("software\microsoft\windows\currentVersion\policies\system", "WallpaperStyle", "DWord" , 3)
     )
     Edit-Registries -Username $username -Regs $regs
 }
@@ -26,7 +31,7 @@ $adminSource = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
 $userDestination  = [System.IO.Path]::Combine($wallpapersFolder, "$studentName.jpg")
 $adminDestination = [System.IO.Path]::Combine($wallpapersFolder, "admin.jpg")
 
-Set-Wallpaper -UserName $student -SourceImage $userSource -DestinationImage $userDestination
+Set-Wallpaper -UserName $studentName -SourceImage $userSource -DestinationImage $userDestination
 Set-Wallpaper -UserName "Admin" -SourceImage $adminSource -DestinationImage $adminDestination
 
 $path = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
