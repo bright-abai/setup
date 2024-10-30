@@ -7,7 +7,7 @@ function Edit-Registry {
     )
 
     if (-not (Test-Path $path)) {
-        New-Item -Path $path -Force 1>$null
+        try { New-Item -Path $path -ErrorAction Stop -Force 1>$null  } catch { throw "the path is $path new item failed"}
     }
 
     try {
@@ -37,21 +37,22 @@ function Edit-RegistriesUser {
         [string[][]]$regs
     )  
     $fileHive = "C:\Users\$username\NTUSER.DAT"
+    $regHiveEdit = "Registry::HKEY_USERS\$username"
     $regHiveLoad = "HKU\$username"
-    $regHiveEdit = "registry::HKEY_USERS:\$username"
 
     if (-Not (Test-Path $fileHive)) { throw "Failed to find $fileHive" }
 
     reg load $regHiveLoad $fileHive
     if ($LASTEXITCODE -ne 0) { throw "Failed to load regHive $regHiveLoad $fileHive" }
-    if (-Not (Test-Path $regHiveLoad)) { throw "Failed to find $regHiveLoad" }
+    if (-Not (Test-Path $regHiveEdit)) { 
+        Get-ChildItem Registry::HKEY_USERS
+        throw "Failed to find $regHiveEdit" }
     
     foreach ($reg in $regs) {
         Edit-Registry -Path "$regHiveEdit\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
     
     reg unload $regHiveLoad 
-    if ($LASTEXITCODE -ne 0) { throw "Failed to unload regHive" }
 }
 
 function Edit-RegistriesMachine {
