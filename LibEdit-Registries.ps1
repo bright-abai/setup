@@ -1,20 +1,3 @@
-function Load-Username {
-    param (
-        [string]$username
-    )
-
-    $sid = (New-Object System.Security.Principal.NTAccount($username)).Translate([System.Security.Principal.SecurityIdentifier]).Value
-    $loaded = $false
-
-    if (-not (Test-Path Registry::HKEY_USERS\$sid)) {
-        reg load "HKEY_USERS\$username" "C:\Users\$username\NTUSER.DAT"
-        $sid = $username
-        $loaded = $true
-    } 
-
-    return @($sid, $loaded)
-}
-
 function Edit-Registry {
     param (
         [string]$path,
@@ -29,11 +12,11 @@ function Edit-Registry {
 
     try {
         $current = Get-ItemProperty -Path $path -Name $prop -ErrorAction Stop
-        Set-ItemProperty -Path $path -Name $prop -Value $value 1>$null
+        Set-ItemProperty -Path $path -Name $prop -Value $value -Force 1>$null
         Write-Host "Property $prop at $path updated for $username with $value, replacing $($current.$prop)"
     
     } catch {
-        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type 1>$null
+        New-ItemProperty -Path $path -Name $prop -Value $value -PropertyType $type -Force 1>$null
         Write-Host "Property $prop at $path created for $username with $value."
     }
 }
@@ -49,14 +32,14 @@ function Edit-RegistriesUser {
         [string[][]]$regs
     )
     
-    $sid = Load-Username -Username $username
+    reg load "HKEY_USERS\$username" "C:\Users\$username\NTUSER.DAT"
+
     foreach ($reg in $regs) {
-        Edit-Registry -Path "HKU\$sid[0]\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
+        Edit-Registry -Path "HKU\$username\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
     
-    if ($sid[1]) {
-        reg unload
-    }
+    reg unload "HKU\$username"
+
 }
 
 function Edit-RegistriesMachine {
