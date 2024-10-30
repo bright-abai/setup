@@ -23,12 +23,34 @@ function Set-Wallpaper {
         @("software\microsoft\windows\currentVersion\policies\system", "Wallpaper"     , "String", $destinationImage), #HKU is not found somehow
         @("software\microsoft\windows\currentVersion\policies\system", "WallpaperStyle", "DWord" , 3)
     )
-    Edit-Registries -Username $username -Regs $regs
+    Edit-RegistriesUser -Username $username -Regs $regs
+}
+
+function Set-Permissions() {
+    $acl = Get-Acl $adminDestination
+    $acl.SetAccessRuleProtection($true, $false)
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read, Delete, Modify", "Deny")
+    $acl.SetAccessRule($denyUsrs)
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $acl.SetAccessRule($allowAdms)
+    $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
+    $acl.SetAccessRule($AllowSys)
+
+    $acl = Get-Acl $userDestination
+    $acl.SetAccessRuleProtection($true, $false)
+    $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read", "Allow")
+    $acl.SetAccessRule($allowUsrs)
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Write", "Deny")
+    $acl.SetAccessRule($denyUsrs)
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $acl.SetAccessRule($allowAdms)
+    $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
+    $acl.SetAccessRule($AllowSys)
 }
 
 $userSource  = [System.IO.Path]::Combine($controlFolder, "numbers", "$studentNumber.jpg")
 $adminSource = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
-$userDestination  = [System.IO.Path]::Combine($wallpapersFolder, "$studentName.jpg")
+$userDestination  = [System.IO.Path]::Combine($wallpapersFolder, "$studentNumber.jpg")
 $adminDestination = [System.IO.Path]::Combine($wallpapersFolder, "admin.jpg")
 
 Set-Wallpaper -UserName $studentName -SourceImage $userSource -DestinationImage $userDestination
@@ -41,6 +63,8 @@ $vals = @($adminDestination, "$adminDestination", 1)
 Edit-Registry -Path $path -Prop $props[0]-Type $types[0] -Value $vals[0]
 Edit-Registry -Path $path -Prop $props[1]-Type $types[1] -Value $vals[1]
 Edit-Registry -Path $path -Prop $props[2]-Type $types[2] -Value $vals[2]
+
+Set-Permissions
 
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
