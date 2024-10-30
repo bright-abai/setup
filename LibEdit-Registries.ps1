@@ -24,7 +24,7 @@ function Edit-Registry {
     )
 
     if (-not (Test-Path $path)) {
-        New-Item -Path $path -Force
+        New-Item -Path $path -Force 1>$null
     }
 
     try {
@@ -43,18 +43,27 @@ function Edit-Registry {
 # 2 - type
 # 3 - value
 
-function Edit-Registries {
+function Edit-RegistriesUser {
     param(
         [string]$username,
         [string[][]]$regs
     )
     
     $sid = Load-Username -Username $username
-    for ($i = 0; $i -lt $regs.Length; $i++) {
-        Edit-Registry -Path "HKU\$regs[$i][0]" -Prop $regs[$i][1] -Type $regs[$i][2] -Value $regs[$i][3]
+    foreach ($reg in $regs) {
+        Edit-Registry -Path "HKU\$sid[0]\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
     
     if ($sid[1]) {
         reg unload
+    }
+}
+
+function Edit-RegistriesMachine {
+    param(
+        [string[][]]$regs
+    )
+    foreach ($reg in $regs) {
+        Edit-Registry -Path $reg[0] -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
 }
