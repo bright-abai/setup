@@ -27,25 +27,33 @@ function Set-Wallpaper {
 }
 
 function Set-Permissions() {
+    $computerName = $env:COMPUTERNAME
+    $fullStudent = "$computerName\$studentName"
+    $fullAdmin = "$computerName\Admin"
+
+    Write-Host $fullStudent $fullAdmin
+
     $acl = Get-Acl $adminDestination
     $acl.SetAccessRuleProtection($true, $false)
-    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read, Delete, Modify", "Deny")
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($fullStudent, "Read, Delete, Modify", "Deny")
     $acl.SetAccessRule($denyUsrs)
-    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule($fullAdmin, "FullControl", "Allow")
     $acl.SetAccessRule($allowAdms)
     $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
     $acl.SetAccessRule($AllowSys)
+    Set-Acl $adminDestination $acl
 
     $acl = Get-Acl $userDestination
     $acl.SetAccessRuleProtection($true, $false)
-    $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Read", "Allow")
+    $allowUsrs = New-Object System.Security.AccessControl.FileSystemAccessRule($fullStudent, "Read", "Allow")
     $acl.SetAccessRule($allowUsrs)
-    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($studentName, "Write", "Deny")
+    $denyUsrs  = New-Object System.Security.AccessControl.FileSystemAccessRule($fullStudent, "Write", "Deny")
     $acl.SetAccessRule($denyUsrs)
-    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule("Admin", "FullControl", "Allow")
+    $allowAdms = New-Object System.Security.AccessControl.FileSystemAccessRule($fullAdmin, "FullControl", "Allow")
     $acl.SetAccessRule($allowAdms)
     $AllowSys  = New-Object System.Security.AccessControl.FileSystemAccessRule("System" , "FullControl", "Allow")
     $acl.SetAccessRule($AllowSys)
+    Set-Acl $userDestination $acl
 }
 
 $userSource  = [System.IO.Path]::Combine($controlFolder, "numbers", "$studentNumber.jpg")
