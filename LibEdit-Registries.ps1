@@ -36,23 +36,32 @@ function Edit-RegistriesUser {
         [string]$username,
         [string[][]]$regs
     )  
-    $fileHive = "C:\Users\$username\NTUSER.DAT"
-    $regHiveEdit = "Registry::HKEY_USERS\$username"
-    $regHiveLoad = "HKU\$username"
+    $sid = (Get-WmiObject -Class Win32_UserProfile | Where-Object { $_.LocalPath -like "*$username*" }).SID
+    $loadedHive = $false
+    if (-not (Test-Path "Registry::HKEY_USERS\$sid")) 
+    { 
+        $sid = $username 
+        
+        $fileHive = "C:\Users\$username\NTUSER.DAT"
+        if (-not (Test-Path $fileHive)) { throw "Failed to find $fileHive" }
+        
+        $regHiveLoad = "HKU\$sid"
+        reg load $regHiveLoad $fileHive
+        if ($LASTEXITCODE -ne 0) { throw "Failed to load regHive $regHiveLoad $fileHive" }
+        $loadedHive = $true
+    }
 
-    if (-Not (Test-Path $fileHive)) { throw "Failed to find $fileHive" }
-
-    reg load $regHiveLoad $fileHive
-    if ($LASTEXITCODE -ne 0) { throw "Failed to load regHive $regHiveLoad $fileHive" }
+    $regHiveEdit = "Registry::HKEY_USERS\$sid"
     if (-Not (Test-Path $regHiveEdit)) { 
         Get-ChildItem Registry::HKEY_USERS
-        throw "Failed to find $regHiveEdit" }
+        throw "Failed to find $regHiveEdit" 
+    }
     
     foreach ($reg in $regs) {
         Edit-Registry -Path "$regHiveEdit\$($reg[0])" -Prop $reg[1] -Type $reg[2] -Value $reg[3]
     }
-    
-    reg unload $regHiveLoad 
+
+    if ($loadedHive -eq $true) { reg unload $regHiveLoad }
 }
 
 function Edit-RegistriesMachine {

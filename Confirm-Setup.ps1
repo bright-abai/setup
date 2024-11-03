@@ -82,8 +82,10 @@ function Confirm-Folders {
 }
 
 function Confirm-Files {
-    Copy-Item -Path "$PSScriptRooot\numbers" -Destination $controlFolder
-    Copy-Item -Path "$PSScriptRooot\bright.jpg" -Destination [System.IO.Path]::Combine($controlFolder, "admin.jpg")
+    $adminDst = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
+
+    Copy-Item -Path "$PSScriptRoot\numbers" -Destination $controlFolder -Recurse -Force
+    Copy-Item -Path "$PSScriptRoot\bright.jpg" -Destination $adminDst
 
     $acl = Get-Acl $controlFolder
     $items = Get-ChildItem -Path $controlFolder -Recurse
