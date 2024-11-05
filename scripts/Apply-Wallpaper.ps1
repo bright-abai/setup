@@ -56,8 +56,8 @@ function Set-Permissions() {
     Set-Acl $userDestination $acl
 }
 
-$userSource  = [System.IO.Path]::Combine($controlFolder, "numbers", "$studentNumber.jpg")
-$adminSource = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
+$userSource  = [System.IO.Path]::Combine($controlFolder, "images", "$studentNumber.jpg")
+$adminSource = [System.IO.Path]::Combine($controlFolder, "images", "bright.jpg")
 $userDestination  = [System.IO.Path]::Combine($wallpapersFolder, "$studentNumber.jpg")
 $adminDestination = [System.IO.Path]::Combine($wallpapersFolder, "admin.jpg")
 

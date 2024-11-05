@@ -44,6 +44,13 @@ function Confirm-OpenSSH {
     Write-Host "OpenSSH confirmed."
 }
 
+function Confirm-PubKey {
+    $pubkey104 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICtinTMwQpzpT9POUllaAGapJK231Btp5zKPug1KY+fL abai@TR-104"
+    Get-Content -Path "$env:USERPROFILE\.ssh\authorized_keys" | Set-Content -Path "$env:USERPROFILE\.ssh\authorized_keys" -Encoding UTF8
+    Write-Output $pubkey104 > "$env:USERPROFILE\.ssh\authorized_keys"
+    #TODO modify permissions to exactly two
+}
+
 $wallpapersFolder = "C:\Wallpapers"
 $controlFolder = "C:\Control"
 $studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
@@ -82,11 +89,6 @@ function Confirm-Folders {
 }
 
 function Confirm-Files {
-    $adminDst = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
-
-    Copy-Item -Path "$PSScriptRoot\numbers" -Destination $controlFolder -Recurse -Force
-    Copy-Item -Path "$PSScriptRoot\bright.jpg" -Destination $adminDst
-
     $acl = Get-Acl $controlFolder
     $items = Get-ChildItem -Path $controlFolder -Recurse
     foreach ($item in $items) {

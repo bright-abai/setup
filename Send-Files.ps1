@@ -1,41 +1,37 @@
-#Set-ExecutionPolicy -ExecutionPolicy Bypass
-
-param(
-    [Parameter(Mandatory = $true)] [string]$cabinet,
-    [Parameter(Mandatory = $true)] [int]$count
+$remotes104 = @( "Admin@ST-104-01"
+    , "Admin@ST-104-02"
+    , "Admin@ST-104-03"
+    , "Admin@ST-104-04"
+    , "Admin@ST-104-05"
+    , "Admin@ST-104-06"
+    , "Admin@ST-104-07"
+    , "Admin@ST-104-08"
+    , "Admin@ST-104-09"
+    , "Admin@ST-104-10"
+    , "Admin@ST-104-11"
+    , "Admin@ST-104-12"
+    , "Admin@ST-104-13"
+    , "Admin@ST-104-14"
+    , "Admin@ST-104-15"
+    , "Admin@ST-104-16"
+    , "Admin@ST-104-17"
+    , "Admin@ST-104-18"
+    , "Admin@ST-104-19"
+    , "Admin@ST-104-20"
+    , "Admin@ST-104-21"
+    , "Admin@ST-104-22"
 )
 
-$files = "*.ps1 bright.jpg -r numbers"
-$destination = "C:/Temp/"
+$scripts = "$PSScriptRoot\scripts"
+$images = "$PSScriptRoot\images"
+$destination = "C:\Control"
 
-$runspacePool = [runspacefactory]::CreateRunspacePool(1, 20) # Adjust max threads as needed
-$runspacePool.Open()
-$runspaces = @()
-
-for ($student = 1; $student -le $count; $student++) {
-    $remote = "Admin@ST-${cabinet}-${student}:${destination}"
-    $scriptBlock = {
-        param ($files, $remote)
-        $scpCommand = "scp $files $remote"
-        Invoke-Expression $scpCommand
-    }
-    $runspace = [powershell]::Create().AddScript($scriptBlock).AddArgument($files).AddArgument($remote)
-    $runspace.RunspacePool = $runspacePool
-    $runspaces += [pscustomobject]@{ Pipe = $runspace; Status = $runspace.BeginInvoke() }
+foreach($remote in $remotes104) {
+    ssh $remote "powershell -Command New-Item -Path $destination -ItemType Directory -Force ; New-Item -Path $destination -ItemType Directory -Force"
+    scp -r $scripts "${remote}:$destination"
+    scp -r $images  "${remote}:$destination"
+    ssh $remote "powershell -File C:\Control\Scripts\Confirm-Setup.ps1"
+    ssh $remote "powershell -File C:\Control\Scripts\Enable-ChangeSettings.ps1"
+    ssh $remote "powershell -File C:\Control\Scripts\Apply-Wallpaper.ps1"
+    #ssh $remote "powershell -Command Restart-Computer -Force"
 }
-
-# Monitor runspace completion
-while ($runspaces.Status -contains $true) {
-    Start-Sleep -Milliseconds 500
-    foreach ($runspace in $runspaces) {
-        if ($runspace.Status.IsCompleted) {
-            $runspace.Pipe.EndInvoke($runspace.Status)
-            $runspace.Pipe.Dispose()
-            $runspaces = $runspaces | Where-Object { $_.Status.IsCompleted -eq $false }
-        }
-    }
-}
-
-# Close the runspace pool
-$runspacePool.Close()
-$runspacePool.Dispose()
