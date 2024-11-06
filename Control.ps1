@@ -15,7 +15,7 @@ $remotes104 = @( "Admin@ST-104-01"
     , "Admin@ST-104-15"
     , "Admin@ST-104-16"
     , "Admin@ST-104-17"
-   # , "Admin@ST-104-18"
+    , "Admin@ST-104-18"
     , "Admin@ST-104-19"
     , "Admin@ST-104-20"
     , "Admin@ST-104-21"
@@ -23,8 +23,9 @@ $remotes104 = @( "Admin@ST-104-01"
 )
 
 foreach($remote in $remotes104) {    
-    ssh $remote "powershell Stop-Computer -Force"
-    #ssh $remote "powershell -File C:\Control\Scripts\Enable-ChangeSettings.ps1"
+    scp "$PSScriptRoot\scripts\Set-English.ps1"  "${remote}:C:\Control\Scripts"
+    ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
+    #ssh $remote "powershell Stop-Computer -Force"
     #ssh $remote "powershell -File C:\Control\Scripts\Apply-Wallpaper.ps1"
     #ssh $remote "powershell -Command Set-ExecutionPolicy -ExecutionPolicy Bypass -Force"
 }

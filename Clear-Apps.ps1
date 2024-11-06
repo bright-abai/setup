@@ -1,44 +1,57 @@
-$gameKeywords = @(
-    "Minecraft",
-    "Roblox",
-    "Counter-Strike"
+$whitelist = @(
+    "Microsoft Windows Terminal",    # Example app name to keep
+    "Microsoft Edge",                # Another example app to keep
+    "C:\Program Files\SomeApp",      # Path to folder to keep
+    "C:\Program Files (x86)\AnotherApp" # Another folder to keep
 )
 
-# Define common game installation directories
-$gameDirectories = @(
-    "C:\Program Files",
-    "C:\Program Files (x86)",
-    "C:\ProgramData",
-    "$env:USERPROFILE\Documents\My Games"
-)
-
-# Loop through each game directory
-foreach ($dir in $gameDirectories) {
-    if (Test-Path $dir) {
-        $games = Get-ChildItem -Path $dir -Recurse -ErrorAction SilentlyContinue | Where-Object { 
-            $_.PSIsContainer -and ($_.Name -like "*$($gameKeywords -join '*')*") 
-        }
-        
-        foreach ($game in $games) {
-            $gameFolder = $($game.FullName)
-            Write-Host "Found game directory: $gameFolder"
-            
-            # Attempt to locate an uninstaller if available
-            $uninstallPath = Join-Path $gameFolder "uninstall.exe"
-            if (Test-Path $uninstallPath) {
-                try { & cmd.exe /c $uninstallPath ; Write-Host "Successfully uninstalled: $uninstallPath"} 
-                catch { Write-Host "Failed to uninstall: $uninstallPath - $_" }
-            } else {
-                Write-Host "No uninstaller found for: $($game.Name)"
-                $confirmation = Read-Host "Are you sure you want to delete the folder '$folderPath'? (Y/N)"
+function Uninstall-App {
+    param (
+        [string]$appName,
+        [string]$uninstallString
+    )
     
-                if ($confirmation -eq 'Y' -or $confirmation -eq 'y') {
-                    Remove-Item -Path $gameFolder -Recurse -Force
-                    Write-Host "The folder '$gameFolder' has been deleted."
-                } else {
-                    Write-Host "Operation canceled. The folder '$gameFolder' was not deleted."
-                }
+    try {
+        # Ask the user for confirmation before proceeding with uninstallation
+        $confirmation = Read-Host "Do you want to uninstall '$appName'? (Y/N)"
+        
+        if ($confirmation -match '^[Yy]$') {
+            Write-Host "Uninstalling app: $appName"
+            
+            if ($uninstallString) {
+                # Run the uninstall command
+                Start-Process -FilePath $uninstallString -ArgumentList "/quiet", "/uninstall" -Wait
+                Write-Host "$appName has been uninstalled."
+            } else {
+                Write-Host "No uninstall string found for $appName. Skipping..."
             }
+        } else {
+            Write-Host "Skipping uninstallation of $appName."
         }
+    } catch {
+        Write-Host "Error uninstalling ${appName}: $_"
     }
 }
+
+
+Write-Host "Checking installed applications..."
+$installedApps = Get-ChildItem -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" |
+                 Where-Object { $_.GetValue("DisplayName") -and $_.GetValue("UninstallString") }
+
+if (Test-Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall") {
+    $installedApps += Get-ChildItem -Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall" |
+                     Where-Object { $_.GetValue("DisplayName") -and $_.GetValue("UninstallString") }
+}
+
+foreach ($app in $installedApps) {
+    $appName = $app.GetValue("DisplayName")
+    $uninstallString = $app.GetValue("UninstallString")
+    
+    if ($whitelist -notcontains $appName -and $whitelist -notcontains $app.PSPath) {
+        Uninstall-App -appName $appName -uninstallString $uninstallString
+    } else {
+        Write-Host "Skipping whitelisted app: $appName"
+    }
+}
+
+Write-Host "Uninstallation process complete!"
