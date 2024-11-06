@@ -23,8 +23,13 @@ $remotes104 = @( "Admin@ST-104-01"
 )
 
 foreach($remote in $remotes104) {    
-    scp "$PSScriptRoot\scripts\Set-English.ps1"  "${remote}:C:\Control\Scripts"
-    ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
+    #scp "$PSScriptRoot\scripts\Set-English.ps1"  "${remote}:C:\Control\Scripts"
+    #scp "$PSScriptRoot\scripts\Clear-Apps.ps1"  "${remote}:C:\Control\Scripts"
+
+    #ssh $remote "powershell -File C:\Control\Scripts\Disable-ChangeSettings.ps1"
+    #ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
+    #ssh $remote "powershell -File C:\Control\Scripts\Clear-Apps.ps1"
+
     #ssh $remote "powershell Stop-Computer -Force"
     #ssh $remote "powershell -File C:\Control\Scripts\Apply-Wallpaper.ps1"
     #ssh $remote "powershell -Command Set-ExecutionPolicy -ExecutionPolicy Bypass -Force"

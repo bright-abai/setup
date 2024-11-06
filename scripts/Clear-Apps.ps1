@@ -5,40 +5,19 @@ $whitelist = @(
     , "AMD*"
     , "Apple*"
     , "Mozilla*"
+    , "Google Chrome*"
+    , "Python*"
+    , "Arduino*"
+    , "*Microsoft Edge*"
+    , "X-Mouse Button*"
+    , "*Java*"
+    , "*Discord*"
     , "Branding64" # Some AMD program
 
     # If need to whitelist the path, uncomment check for $uninstallString
     # "C:\Windows\*"
     # "C:\PROGRA~1\DIFX\*"
 )
-
-function Uninstall-App {
-    param (
-        [string]$appName,
-        [string]$uninstallString
-    )
-    
-    try {
-        # Ask the user for confirmation before proceeding with uninstallation
-        $confirmation = Read-Host "Do you want to uninstall '$appName'? (Y/N)"
-        
-        if ($confirmation -match '^[Yy]$') {
-            Write-Host "Uninstalling app: $appName"
-            
-            if ($uninstallString) {
-                # Run the uninstall command
-                Start-Process -FilePath $uninstallString -ArgumentList "/quiet", "/uninstall" -Wait
-                Write-Host "$appName has been uninstalled."
-            } else {
-                Write-Host "No uninstall string found for $appName. Skipping..."
-            }
-        } else {
-            Write-Host "Skipping uninstallation of $appName."
-        }
-    } catch {
-        Write-Host "Error uninstalling ${appName}: $_"
-    }
-}
 
 function Clear-Apps {
     param (
@@ -65,12 +44,13 @@ function Clear-Apps {
         }
         if ($uninstall) {
             if ($dryRun) {
-                Write-Host "DELETE: $appName`n $uninstallString"
+                Write-Host "CAN DELETE: $appName`n $uninstallString"
             }
             else {
                 try {
-                    Write-Host "Uninstalling $appName"
-                    Start-Process -FilePath $uninstallString -ArgumentList "/quiet", "/uninstall" -Wait
+                    Write-Host "Uninstalling $appName with $uninstallString"
+                    Start-Process "$uninstallString" -ArgumentList "/s"
+                    Start-Sleep -Seconds 3
                 } catch {
                     Write-Error "Failed to uninstalll $appName"
                 }
@@ -78,12 +58,32 @@ function Clear-Apps {
         }
         else {
             if ($dryRun) {
-                Write-Host "SKIP: $appName`n"
+                #Write-Host "SKIP: $appName`n"
             }
         }
     }
 
-    Write-Host "Uninstallation process complete!"
+    Write-Host "Uninstalled apps"
+}
+
+function Clear-Downloads {
+    $studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
+    Get-ChildItem -Path "C:\Users\Admin\Downloads" -Recurse | Remove-Item -Force -Recurse
+    Get-ChildItem -Path "C:\Users\$studentName\Downloads" -Recurse | Remove-Item -Force -Recurse
+
+    Write-Host "Downloads folder cleared"
+}
+
+function Clear-VolumeD {
+    if (Test-Path -Path "D:\") {
+        Write-Host "D: drive found. Deleting all contents..."
+        Get-ChildItem -Path $drivePath -Recurse -Force | Remove-Item -Force -Recurse
+        Write-Host "All contents of D: have been deleted."
+    } else {
+        Write-Host "D: drive does not exist."
+    }
 }
 
 Clear-Apps -WhiteList $whitelist -DryRun $true
+Clear-Downloads
+Clear-VolumeD
