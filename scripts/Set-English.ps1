@@ -1,9 +1,9 @@
 $studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
 
-$english = Get-InstalledLanguage | Where-Object { $_.LanguageId -eq "en-US"}
-if ($english.Count -eq 0) {
-    Install-Language en-US
-}
+# $english = Get-InstalledLanguage | Where-Object { $_.LanguageId -eq "en-US"}
+# if ($english.Count -eq 0) {
+#     Install-Language en-US
+# }
 
 Set-WinSystemLocale -SystemLocale en-US
 Set-SystemPreferredUILanguage en-US

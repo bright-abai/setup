@@ -74,6 +74,14 @@ function Clear-Downloads {
     Write-Host "Downloads folder cleared"
 }
 
+function Clear-Desktop {
+    $studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
+    Get-ChildItem -Path "C:\Users\Admin\Desktop" -Recurse | Where-Object { $_.Extension -ne '.lnk' } | Remove-Item -Force -Recurse
+    Get-ChildItem -Path "C:\Users\$studentName\Desktop" -Recurse | Where-Object { $_.Extension -ne '.lnk' } | Remove-Item -Force -Recurse
+    
+    Write-Host "Desktop folders cleared, except shortcuts"
+}
+
 function Clear-VolumeD {
     if (Test-Path -Path "D:\") {
         Write-Host "D: drive found. Deleting all contents..."
@@ -86,4 +94,5 @@ function Clear-VolumeD {
 
 Clear-Apps -WhiteList $whitelist -DryRun $true
 Clear-Downloads
+#Clear-Desktop
 Clear-VolumeD
