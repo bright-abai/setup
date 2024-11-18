@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 ::start /b scp hosts Admin@ST-104-01:C:\Windows\System32\drivers\etc\
 
-for /l %%i in (1,1,20) do (
+for /l %%i in (1,1,22) do (
     if %%i lss 10 (
         set "suffix=0%%i"
     ) else (
