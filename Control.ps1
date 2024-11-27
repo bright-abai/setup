@@ -1,5 +1,5 @@
 $remotes104 = @( "Admin@ST-104-01"
-    , "Admin@ST-104-02"
+    "Admin@ST-104-02"
     , "Admin@ST-104-03"
     , "Admin@ST-104-04"
     , "Admin@ST-104-05"
@@ -23,11 +23,11 @@ $remotes104 = @( "Admin@ST-104-01"
 )
 
 foreach($remote in $remotes104) {    
-    #scp "$PSScriptRoot\scripts\Set-English.ps1"  "${remote}:C:\Control\Scripts"
-    #scp "$PSScriptRoot\scripts\Clear-Apps.ps1"  "${remote}:C:\Control\Scripts"
+    #scp "D:\*"  "${remote}:C:\Users\Public"
+    scp "$PSScriptRoot\scripts\Set-English.ps1"  "${remote}:C:\Control\Scripts"
+    ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
 
     #ssh $remote "powershell -File C:\Control\Scripts\Disable-ChangeSettings.ps1"
-    #ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
     #ssh $remote "powershell -File C:\Control\Scripts\Clear-Apps.ps1"
 
     #ssh $remote "powershell Stop-Computer -Force"
