@@ -29,7 +29,7 @@
 127.0.0.1 igru.net www.igru.net
 127.0.0.1 crazygames.ru www.crazygames.ru
 127.0.0.1 krunker.io www.krunker.io
-127.0.0.1 1v1.lol www.1v1.lol
+127.0.0.1 1v1.lol www.1v1.lol 1v1.me www.1v1.me
 127.0.0.1 topgames.com www.topgames.com
 # 16.10.2024
 127.0.0.1 msn.com www.msn.com
@@ -62,4 +62,6 @@
 127.0.0.1 mcpehub.org www.mcpehub.org
 127.0.0.1 tlauncher.org www.tlauncher.org
 127.0.0.1 modscraft.net www.modscraft.net
+127.0.0.1 eaglecraft.com www.eaglecraft.com
+127.0.0.1 geometrygame.org www.geometrygame.org
 # 127.0.0.1 example.com www.example.com
