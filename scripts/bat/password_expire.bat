@@ -6,7 +6,7 @@ for /l %%i in (1,1,20) do (
     
     echo Starting connection to !address! in parallel...
     
-    start cmd /c ssh !address! "shutdown -s -t 0"
+    start /b ssh !address! "wmic UserAccount where Name='ST-!suffix!' set PasswordExpires=False"
     
     endlocal
 )
