@@ -31,7 +31,7 @@ foreach($remote in $remotes104) {
     #ssh $remote "powershell -File C:\Control\Scripts\Disable-ChangeSettings.ps1"
     #ssh $remote "powershell -File C:\Control\Scripts\Clear-Apps.ps1"
 
-    ssh $remote "powershell Stop-Computer -Force"
     #ssh $remote "powershell -File C:\Control\Scripts\Apply-Wallpaper.ps1"
+    #ssh $remote "powershell -Command Write-Host $remote connected"
     #ssh $remote "powershell -Command Set-ExecutionPolicy -ExecutionPolicy Bypass -Force"
 }
