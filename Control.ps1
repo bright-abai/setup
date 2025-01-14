@@ -1,5 +1,5 @@
-$remotes104 = @( "Admin@ST-104-14"
-    # , "Admin@ST-104-02"
+$remotes104 = @( "Admin@ST-104-01"
+    , "Admin@ST-104-02"
     , "Admin@ST-104-03"
     , "Admin@ST-104-04"
     , "Admin@ST-104-05"
@@ -24,8 +24,10 @@ $remotes104 = @( "Admin@ST-104-14"
 
 foreach($remote in $remotes104) {    
     #scp "D:\*"  "${remote}:C:\Users\Public"
-    # ssh $remote powershell New-Item -Path "C:\" -ItemType "directory" -Name "Games"
-    # scp -r "C:\Games\Getting Over It with Bennett Foddy"  "${remote}:C:\Games"
+    #ssh $remote powershell New-Item -Path "C:\" -ItemType "directory" -Name "Programs"
+    ssh $remote powershell New-Item -Path "C:\Programs" -ItemType "directory" -Name "NodeJS"
+    #scp -r "C:\Programs\NodeJS"  "${remote}:C:\Programs\NodeJS"
+    #scp "C:\Users\Abai\Downloads\nodejs.msi"  "${remote}:C:\Programs\"
     #ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
 
     #ssh $remote "powershell -File C:\Control\Scripts\Disable-ChangeSettings.ps1"
