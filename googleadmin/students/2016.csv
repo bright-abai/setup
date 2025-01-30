@@ -1,37 +1,38 @@
 First Name [Required],Last Name [Required],Email Address [Required],Password [Required],Org Unit Path [Required],Change Password at Next Sign-In
-Milana,Ahn,ahn_milana@bright.kg,brightstudent,/Students/2016,True
-Sajida,Akunova,akunova_sajida@bright.kg,brightstudent,/Students/2016,True
-Karima,Alymkulova,alymkulova_karima@bright.kg,brightstudent,/Students/2016,True
-Deniz,Avazbekov,avazbekov_deniz@bright.kg,brightstudent,/Students/2016,True
-Adiya,Bekmuratova,bekmuratova_adiya@bright.kg,brightstudent,/Students/2016,True
-Aidar,Damirbekov,damirbekov_aidar@bright.kg,brightstudent,/Students/2016,True
-Kemal,Genc,genc_kemal@bright.kg,brightstudent,/Students/2016,True
-Aisha,Ibraimova,ibraimova_aisha@bright.kg,brightstudent,/Students/2016,True
-Zeynep,Kahraman,kahraman_zeynep@bright.kg,brightstudent,/Students/2016,True
-Daniel,Kamildinov,kamildinov_daniel@bright.kg,brightstudent,/Students/2016,True
-Eleonora,Kuruchbekova,kuruchbekova_eleonora@bright.kg,brightstudent,/Students/2016,True
-Aizirek,Maksatbekova,maksatbekova_aizirek@bright.kg,brightstudent,/Students/2016,True
-Atai,Myrzabraimov,myrzabraimov_atai@bright.kg,brightstudent,/Students/2016,True
-Ayelina,Omurgazieva,omurgazieva_ayelina@bright.kg,brightstudent,/Students/2016,True
-Darina,Toktogulova,toktogulova_darina@bright.kg,brightstudent,/Students/2016,True
-Kutman,Turabaev,turabaev_kutman@bright.kg,brightstudent,/Students/2016,True
-Sheraaly,Turdumambekov,turdumambekov_sheraaly@bright.kg,brightstudent,/Students/2016,True
+Hadizha,Abdrahmanova,abdrahmanova_hadizha@bright.kg,brightstudent,/Students/2016/A,True
+Aigerim,Akmatalieva,akmatalieva_aigerim@bright.kg,brightstudent,/Students/2016/A,True
+Temirlan,Amanov,amanov_temirlan@bright.kg,brightstudent,/Students/2016/A,True
+Alia,Baitorueva,baitorueva_alia@bright.kg,brightstudent,/Students/2016/A,True
+Ilaz,Bekiev,bekiev_ilaz@bright.kg,brightstudent,/Students/2016/A,True
+Siymyk,Bokenov,bokenov_siymyk@bright.kg,brightstudent,/Students/2016/A,True
+Iskender,Botabaev,botabaev_iskender@bright.kg,brightstudent,/Students/2016/A,True
+Melek,Dzhaner,dzhaner_melek@bright.kg,brightstudent,/Students/2016/A,True
+Dair,Kaiypov,kaiypov_dair@bright.kg,brightstudent,/Students/2016/A,True
+Adelina,Kubanychbekova,kubanychbekova_adelina@bright.kg,brightstudent,/Students/2016/A,True
+Aruuke,Muratbekova,muratbekova_aruuke@bright.kg,brightstudent,/Students/2016/A,True
+Muslim,Nazirbaev,nazirbaev_muslim@bright.kg,brightstudent,/Students/2016/A,True
+Angelina,Omorova,omorova_angelina@bright.kg,brightstudent,/Students/2016/A,True
+Erhan,Osmonov,osmonov_erhan@bright.kg,brightstudent,/Students/2016/A,True
+Salim,Safarov,safarov_salim@bright.kg,brightstudent,/Students/2016/A,True
+Adelina,Sujunalieva,sujunalieva_adelina@bright.kg,brightstudent,/Students/2016/A,True
+Rayana,Talasbekova,talasbekova_rayana@bright.kg,brightstudent,/Students/2016/A,True
+Rayana,Tashieva,tashieva_rayana@bright.kg,brightstudent,/Students/2016/A,True
+Beksultan,Tolobekov,tolobekov_beksultan@bright.kg,brightstudent,/Students/2016/A,True
+Arina,Tychina,tychina_arina@bright.kg,brightstudent,/Students/2016/A,True
+Altynai,Shabdanbekova,shabdanbekova_altynai@bright.kg,brightstudent,/Students/2016/A,True
 
-
-Milana Ahn ahn_milana@bright.kg
-Sajida Akunova akunova_sajida@bright.kg
-Karima Alymkulova alymkulova_karima@bright.kg
-Deniz Avazbekov avazbekov_deniz@bright.kg
-Adiya Bekmuratova bekmuratova_adiya@bright.kg
-Aidar Damirbekov damirbekov_aidar@bright.kg
-Kemal Genc genc_kemal@bright.kg
-Aisha Ibraimova ibraimova_aisha@bright.kg
-Zeynep Kahraman kahraman_zeynep@bright.kg
-Daniel Kamildinov kamildinov_daniel@bright.kg
-Eleonora Kuruchbekova kuruchbekova_eleonora@bright.kg
-Aizirek Maksatbekova maksatbekova_aizirek@bright.kg
-Atai Myrzabraimov myrzabraimov_atai@bright.kg
-Ayelina Omurgazieva omurgazieva_ayelina@bright.kg
-Darina Toktogulova toktogulova_darina@bright.kg
-Kutman Turabaev turabaev_kutman@bright.kg
-Sheraaly Turdumambekov turdumambekov_sheraaly@bright.kg
+Amina,Abudu,abudu_amina@bright.kg,brightstudent,/Students/2016/B,True
+Bermet,Asambaeva,asambaeva_bermet@bright.kg,brightstudent,/Students/2016/B,True
+Jasmina,Busurmankulova,busurmankulova_jasmina@bright.kg,brightstudent,/Students/2016/B,True
+Daniar,Karagulov,karagulov_daniar@bright.kg,brightstudent,/Students/2016/B,True
+Aidar,Kidibaev,kidibaev_aidar@bright.kg,brightstudent,/Students/2016/B,True
+Amir,Kurmanbekov,kurmanbekov_amir@bright.kg,brightstudent,/Students/2016/B,True
+Ailin,Magsudzade,magsudzade_ailin@bright.kg,brightstudent,/Students/2016/B,True
+Akak,Marazykova,marazykova_akak@bright.kg,brightstudent,/Students/2016/B,True
+Abubakir,Mirzaev,mirzaev_abubakir@bright.kg,brightstudent,/Students/2016/B,True
+Daniel,Nogoibaev,nogoibaev_daniel@bright.kg,brightstudent,/Students/2016/B,True
+Adinai,Salamatova,salamatova_adinai@bright.kg,brightstudent,/Students/2016/B,True
+Malika,Taalaibekova,taalaibekova_malika@bright.kg,brightstudent,/Students/2016/B,True
+Aziz,Tynarov,tynarov_aziz@bright.kg,brightstudent,/Students/2016/B,True
+Nurai,Sharsheeva,sharsheeva_nurai@bright.kg,brightstudent,/Students/2016/B,True
+Sultanmurat,Jerkinbekov,jerkinbekov_sultanmurat@bright.kg,brightstudent,/Students/2016/B,True
