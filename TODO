@@ -29,6 +29,11 @@ In C:\Control add powershell and .bat scripts for controlling the computer, sett
 
 Configure wallpapers to be numbers for the computer, maybe they can change based on the event. The number can be personalized with Figma assistance.
 
+Set a BIOS password and Admin passwords
+For Bios you need to press delete key, go to administrator password and make sure that mode is setup, not system, otherwise the BIOS password will be on each Start of the computer.
+
+Make a plan for computer maintance, dust cleaning and thermopaste recharge
+
 ## Games
 
 1. Celeste
