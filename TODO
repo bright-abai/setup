@@ -27,6 +27,8 @@ Create two accounts, one for student, which can be configured at the deployment.
 
 In C:\Control add powershell and .bat scripts for controlling the computer, setting policies and Registry Keys. Also add there autorun sysinternals, and some other programs for diagnose and management perhaps.
 
+Configure wallpapers to be numbers for the computer, maybe they can change based on the event. The number can be personalized with Figma assistance.
+
 ## Games
 
 1. Celeste
