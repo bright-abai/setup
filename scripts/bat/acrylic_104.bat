@@ -15,8 +15,10 @@ for /l %%i in (1,1,22) do (
     echo Starting connection to !address!
     
     start /b scp AcrylicHosts.txt !address!:C:\Control\AcrylicDNS\
+    start /b ssh !address! powershell Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses "127.0.0.1"
+    start /b ssh !address! powershell Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses "::1"
     start /b ssh !address! C:\Control\AcrylicDNS\AcrylicUI.exe RestartAcrylicService
-
+ 
 )
 
 endlocal
