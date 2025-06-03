@@ -8,6 +8,12 @@ After Effects
 VS Code
 Inteliji IDEA
 PyCharm
+### Environment
+JDK
+Git
+Gh
+
+
 
 ### Windows Microsoft Office Activation
 https://massgrave.dev/

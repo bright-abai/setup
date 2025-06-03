@@ -1,4 +1,4 @@
-$remotes104 = @( "Admin@ST-104-01"
+$remotes104 = @( "Admin@ST-104-17"
     # , "Admin@ST-104-02"
     # , "Admin@ST-104-03"
     # , "Admin@ST-104-04"
@@ -31,9 +31,9 @@ foreach($remote in $remotes104) {
     # ssh $remote powershell New-Item -Path "C:\Programs" -ItemType "directory" -Name "Installers"
     # ssh $remote powershell New-Item -Path "C:\Programs" -ItemType "directory" -Name "WebStorm"
     # ssh $remote powershell New-Item -Path "C:\Programs" -ItemType "directory" -Name "PyCharm"
-    ssh $remote powershell Get-Process | Where-Object {$_.MainWindowTitle -ne ""} | stop-process
-    # scp "C:\Programs\WebStorm.exe"  "${remote}:C:\Programs\Installers\"
-    # scp -r "C:\Games\Overcooked"  "${remote}:C:\Games\Overcooked\"
+    # ssh $remote powershell Get-Process | Where-Object {$_.MainWindowTitle -ne ""} | stop-process
+    # scp "C:\Users\Abai\Desktop\Bright\setup\code.txt"  "${remote}:C:\Study\"
+    scp -r "C:\Games\Legacy"  "${remote}:C:\Games\Legacy\"
     #scp "C:\Users\Abai\Downloads\nodejs.msi"  "${remote}:C:\Programs\"
     #ssh $remote "powershell -File C:\Control\Scripts\Set-English.ps1"
 

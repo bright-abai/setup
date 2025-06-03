@@ -6,7 +6,7 @@
 3. Double check that pbkey10x.bat contains your public key, and then run pbkey10x.bat[^2] 
 4. pbkey1x.bat opens a folder where authorised_keys is located. You should go security settings for that file, turn of inheritance and remove administrators group manually. [^3]
 
-## For the client (techer, controller)
+## For the client (teacher, controller)
 1. `ssh-keygen -t ed25519` [^4] (no passphrase is advised, because there was one time when I mistyped the password twice)
 2. `ssh-add C:\Users\Abai\.ssh\id_ed25519`
 
