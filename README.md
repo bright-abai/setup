@@ -3,7 +3,7 @@ sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre op
 ```
 
 ```
-sudo tar -xf /home/student/Downloads/renpy-8.4.1-sdk.tar.bz2 -C /opt/ ; sudo tar -xf /home/student/Downloads/blender-4.5.2-linux-x64.tar.xz -C /opt/ ; sudo DEBIAN_FRONTEND=noninteractive dpkg -i /home/student/Downloads/code_*_amd64.deb
+sudo tar -xf /home/student/Downloads/renpy-8.4.1-sdk.tar.bz2 -C /opt/ ; sudo tar -xf /home/student/Downloads/blender-4.5.2-linux-x64.tar.xz -C /opt/ ; sudo DEBIAN_FRONTEND=noninteractive dpkg -i /home/student/Downloads/code_1.103.2-1755709794_amd64.deb
 ```
 
 
