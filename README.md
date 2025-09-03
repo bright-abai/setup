@@ -1,5 +1,5 @@
 ```
-sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre
+sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre openssh-server ; sudo ufw allow ssh ; sudo systemctl enable ssh -now
 ```
 
 blender:
