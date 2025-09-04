@@ -7,7 +7,7 @@ sudo tar -xf /home/student/Downloads/renpy-8.4.1-sdk.tar.bz2 -C /opt/ ; sudo tar
 ```
 
 ```
-sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; /home/student/Downloads/grub2/install.sh -b
+sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; sudo /home/student/Downloads/grub2/install.sh -b
 ```
 
 [blender](https://www.blender.org/download/release/Blender4.5/blender-4.5.2-linux-x64.tar.xz/) \
