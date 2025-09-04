@@ -14,6 +14,14 @@ sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub
 [renpy](https://www.renpy.org/dl/8.4.1/renpy-8.4.1-sdk.tar.bz2) move to /opt, create desktop launcher, set icon from renpyfolder/launcher \
 [vscode](https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64) install python and java extensions for each user, set jdk path in usr/lib/jvm/ \
 
+```
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACDvWE1HuV9rFBIR4NZMWo+DYlFJAoC54uvfQCg8w0FQ3AAAAJDu8SiG7vEo
+hgAAAAtzc2gtZWQyNTUxOQAAACDvWE1HuV9rFBIR4NZMWo+DYlFJAoC54uvfQCg8w0FQ3A
+AAAEDz4tOTt3xBKh+NWDVJmjqcH4W+ob4weV88zOL4BHvqi+9YTUe5X2sUEhHg1kxaj4Ni
+UUkCgLni699AKDzDQVDcAAAAC2FiYWlAVFItMTA0AQI=
+```
+
 hosts
 ```
 # first 30 entries
