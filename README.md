@@ -6,6 +6,9 @@ sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre op
 sudo tar -xf /home/student/Downloads/renpy-8.4.1-sdk.tar.bz2 -C /opt/ ; sudo tar -xf /home/student/Downloads/blender-4.5.2-linux-x64.tar.xz -C /opt/ ; sudo DEBIAN_FRONTEND=noninteractive dpkg -i /home/student/Downloads/code_1.103.2-1755709794_amd64.deb
 ```
 
+```
+sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; /home/student/Downloads/grub2/install.sh -b
+```
 
 [blender](https://www.blender.org/download/release/Blender4.5/blender-4.5.2-linux-x64.tar.xz/) \
 [renpy](https://www.renpy.org/dl/8.4.1/renpy-8.4.1-sdk.tar.bz2) move to /opt, create desktop launcher, set icon from renpyfolder/launcher \
