@@ -1,39 +1,36 @@
+# Commands to execute
+Install programs with apt package manager linux mint and allow ssh for ubuntu's firewall (The inheritance of OS is Debian->Ubuntu->Linux Mint)
 ```
 sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre openssh-server ; sudo ufw allow ssh ; sudo systemctl enable --now ssh
 ```
-
+[blender](https://www.blender.org/download/release/Blender4.5/blender-4.5.2-linux-x64.tar.xz/) \
+[renpy](https://www.renpy.org/dl/8.4.1/renpy-8.4.1-sdk.tar.bz2) move to /opt, create desktop launcher, set icon from renpyfolder/launcher \
+[vscode](https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64) install python and java extensions for each user, set jdk path in usr/lib/jvm/ \
+Extract downloaded archives to /opt/ and install vscode. After script finishes, open VS code and press continue to not set the keyring, it is not needed in a school setting
 ```
 sudo tar -xf /home/student/Downloads/renpy-8.4.1-sdk.tar.bz2 -C /opt/ ; sudo tar -xf /home/student/Downloads/blender-4.5.2-linux-x64.tar.xz -C /opt/ ; sudo DEBIAN_FRONTEND=noninteractive dpkg -i /home/student/Downloads/code_1.103.2-1755709794_amd64.deb
 ```
-
+Download grub2 theme 'Graphite' [here](files/Graphite-grub2-theme.tar.xz) and run the script. Set GRUB-TIMEOUT to 60 to increase idle time for selection of the operating system.
 ```
 sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; sudo /home/student/Downloads/grub2/install.sh -b
 ```
 
-[blender](https://www.blender.org/download/release/Blender4.5/blender-4.5.2-linux-x64.tar.xz/) \
-[renpy](https://www.renpy.org/dl/8.4.1/renpy-8.4.1-sdk.tar.bz2) move to /opt, create desktop launcher, set icon from renpyfolder/launcher \
-[vscode](https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64) install python and java extensions for each user, set jdk path in usr/lib/jvm/ \
 
-```
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACDvWE1HuV9rFBIR4NZMWo+DYlFJAoC54uvfQCg8w0FQ3AAAAJDu8SiG7vEo
-hgAAAAtzc2gtZWQyNTUxOQAAACDvWE1HuV9rFBIR4NZMWo+DYlFJAoC54uvfQCg8w0FQ3A
-AAAEDz4tOTt3xBKh+NWDVJmjqcH4W+ob4weV88zOL4BHvqi+9YTUe5X2sUEhHg1kxaj4Ni
-UUkCgLni699AKDzDQVDcAAAAC2FiYWlAVFItMTA0AQI=
-```
 
-hosts
+# Hosts
+Block common sites by appending this to /etc/hosts with sudo
 ```
-# first 30 entries
-# 8 major sites
+# 10 major sites
 127.0.0.1 pornhub.com www.pornhub.com
 127.0.0.1 roblox.com www.roblox.com
 127.0.0.1 bluestacks.com www.bluestacks.com
 127.0.0.1 tiktok.com www.tiktok.com
 127.0.0.1 youtube.com www.youtube.com
 127.0.0.1 emupedia.net www.emupedia.net
-127.0.0.1 yandex.ru www.yandex.ru
-# 11 game sites
+127.0.0.1 yandex.ru www.yandex.ru ya.ru www.ya.ru
+127.0.0.1 blooket.com www.blooket.com play.blooket.com cryptohack.blooket.com
+127.0.0.1 kahoot.com www.kahoot.com kahoot.it www.kahoot.it
+# game sites, minecraft launchers
 127.0.0.1 poki.com www.poki.com
 127.0.0.1 ru-cs.ru www.ru-cs.ru
 127.0.0.1 cs-down.com www.cs-down.com
@@ -48,22 +45,16 @@ hosts
 127.0.0.1 download-cs.net www.download-cs.net
 127.0.0.1 play-cs.com www.play-cs.com
 127.0.0.1 eaglecraft.com www.eaglecraft.com
-# 05.10.2024
-# 7 game sites and date of kahoot and blooket block
-127.0.0.1 blooket.com www.blooket.com play.blooket.com cryptohack.blooket.com
-127.0.0.1 kahoot.com www.kahoot.com kahoot.it www.kahoot.it
 127.0.0.1 igru.net www.igru.net
 127.0.0.1 crazygames.ru www.crazygames.ru crazygames.com.ua www.crazygames.com.ua
 127.0.0.1 krunker.io www.krunker.io
 127.0.0.1 1v1.lol www.1v1.lol 1v1.me www.1v1.me 1v1lol.me www.1v1lol.me 1v1lol.org www.1v1lol.org
 127.0.0.1 topgames.com www.topgames.com
-# 16.10.2024
 127.0.0.1 msn.com www.msn.com
 127.0.0.1 jut.su www.jut.su
 127.0.0.1 jut-su.net www.jut-su.net
 127.0.0.1 freegames.com www.freegames.com
 127.0.0.1 crazygames.com www.crazygames.com
-# 08.11.2024
 127.0.0.1 minecraft-inside.ru www.minecraft-inside.ru
 127.0.0.1 modscraft.net www.modscraft.net eaglecraft.com www.eaglecraft.com tlauncher.org www.tlauncher.org x-launcher.com www.x-launcher.com xlauncher.org www.xlauncher.org
 127.0.0.1 llaun.ch/ru www.llaun.ch/ru
@@ -88,10 +79,7 @@ hosts
 127.0.0.1 rutube.ru hdrezka.ag kinogo.inc rezka.ag
 127.0.0.1 mcpehub.org www.mcpehub.org
 127.0.0.1 koyso.com www.koyso.com ultrakill.en.download.it
-127.0.0.1 
 127.0.0.1 geometrygame.org www.geometrygame.org geometrydash-lite.com www.geometrydash-lite.com
 127.0.0.1 slither.io www.slither.io slithergame.io www.slithergame.io slitheriogame.io www.slitheriogame.io
 127.0.0.1 allwebgames.com www.allwebgames.com territorial.io www.territorial.io soccerrandom.io www.soccerrandom.io
-
-# 127.0.0.1 example.com www.example.com
 ```
