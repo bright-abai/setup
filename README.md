@@ -15,7 +15,36 @@ Download grub2 theme 'Graphite' [here](files/Graphite-grub2-theme.tar.xz) and ru
 sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; sudo /home/student/Downloads/grub2/install.sh -b
 ```
 
+# Passwordless SSH Setup
 
+## Configuration
+- **Client:** `teacher@TR-106` (only this account can login)
+- **Servers:** `teacher@192.168.106.1` to `teacher@192.168.106.22`
+
+## Setup Steps
+
+1. **Generate SSH key on client:**
+```bash
+ssh-keygen -t ed25519 -C "teacher@TR-106"
+```
+Press Enter twice (default location, no passphrase).
+
+2. **Copy key to all servers:**
+```bash
+for i in {1..22}; do ssh-copy-id teacher@192.168.106.$i; done
+```
+
+3. **Set permissions on each server:**
+```bash
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+```
+
+## Test
+```bash
+ssh teacher@192.168.106.1
+```
+
+Should login without password prompt.
 
 # Hosts
 Block common sites by appending this to /etc/hosts with sudo
