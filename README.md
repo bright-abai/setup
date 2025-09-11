@@ -1,4 +1,15 @@
-# Commands to execute
+# Turn off all computers
+## 104
+```
+for i in {1..23}; do ssh -o ConnectTimeout=5 -o StrictHostKeyChecking=no teacher@192.168.104.$i "sudo shutdown -h now" & done
+```
+## 106
+```
+for i in {1..22}; do ssh -o ConnectTimeout=5 -o StrictHostKeyChecking=no teacher@192.168.106.$i "sudo shutdown -h now" & done
+```
+
+# Setup
+## Commands to execute
 Install programs with apt package manager linux mint and allow ssh for ubuntu's firewall (The inheritance of OS is Debian->Ubuntu->Linux Mint)
 ```
 sudo apt install inkscape krita kdenlive git gh openjdk-21-jdk openjdk-21-jre openssh-server ; sudo ufw allow ssh ; sudo systemctl enable --now ssh
@@ -15,13 +26,13 @@ Download grub2 theme 'Graphite' [here](files/Graphite-grub2-theme.tar.xz) and ru
 sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; sudo /home/student/Downloads/grub2/install.sh -b
 ```
 
-# Passwordless SSH Setup
+## Passwordless SSH Setup
 
-## Configuration
+### Configuration
 - **Client:** `teacher@TR-106` (only this account can login)
 - **Servers:** `teacher@192.168.106.1` to `teacher@192.168.106.22`
 
-## Setup Steps
+### Setup Steps
 
 1. **Generate SSH key on client:**
 ```bash
@@ -39,14 +50,14 @@ for i in {1..22}; do ssh-copy-id teacher@192.168.106.$i; done
 chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
 
-## Test
+### Test
 ```bash
 ssh teacher@192.168.106.1
 ```
 
 Should login without password prompt.
 
-# Hosts
+## Hosts
 Block common sites by appending this to /etc/hosts with sudo
 ```
 # 10 major sites
