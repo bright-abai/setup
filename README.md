@@ -25,7 +25,7 @@ Download grub2 theme 'Graphite' [here](files/Graphite-grub2-theme.tar.xz) and ru
 ```
 sudo nano /etc/default/grub ; sudo tar -xf /home/student/Downloads/Graphite-grub2-theme.tar.xz -C /home/student/Downloads/ ; sudo /home/student/Downloads/grub2/install.sh -b
 ```
-
+Additional: fontmatrix, scratch
 ## Passwordless SSH Setup
 
 ### Configuration
