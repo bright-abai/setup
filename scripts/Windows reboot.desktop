@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TURN OFF
+Exec=gnome-terminal -- bash -c '/opt/turnoff.sh "sudo efibootmgr --bootnext 0000 && sudo reboot"; exec bash'
+Comment=
+Terminal=true
+StartupNotify=true
+PrefersNonDefaultGPU=false
+Icon=/opt/win10.webp
+Type=Application
+Name[en_US]=Windows reboot

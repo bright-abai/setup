@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TURN OFF
+Exec=gnome-terminal -- bash -c '/opt/turnoff.sh "sudo shutdown -h now"; exec bash'
+Comment=
+Terminal=true
+StartupNotify=true
+PrefersNonDefaultGPU=false
+Icon=system-shutdown
+Type=Application
+Name[en_US]=Power off

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TURN OFF
+Exec=gnome-terminal -- bash -c '/opt/turnoff.sh "whoami"; exec bash'
+Comment=
+Terminal=true
+StartupNotify=true
+PrefersNonDefaultGPU=false
+Icon=network-wired
+Type=Application
+Name[en_US]=Check connection
