@@ -14,6 +14,11 @@ The contents of `policies.json`:
       "Locked": true,
       "StartPage": "homepage"
     },
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked"
+      }
+    },
     "ManagedBookmarks": [
       {
         "toplevel_name": "Bright International School"
@@ -94,7 +99,6 @@ The contents of `policies.json`:
       "Block": ["<all_urls>"],
       "Exceptions": [
         "*://bright.edupage.org/*",
-        "*://*.gle.com/*",
         "*://*.igraemsa.ru/*",
         "*://*.edclub.com/*",
         "*://pazlyonline.com/*",
@@ -110,6 +114,11 @@ The contents of `policies.json`:
         "*://cplusplus.com/*",
         "*://geeksforgeeks.org/*",
         "*://gmail.com/*",
+        "*://mail.google.com/*",
+        "*://accounts.google.com/*",
+        "*://workspace.google.com/*",
+        "*://drive.google.com/*",
+        "*://docs.google.com/*",
         "*://freepik.com/*",
         "*://pexels.com/*",
         "*://canva.com/*",
@@ -124,6 +133,7 @@ The contents of `policies.json`:
         "*://superuser.org/*",
         "*://hyperskill.org/*",
         "*://claude.ai/*",
+        "*://*.antropic.com/*",
         "*://*.shadertoy.com/*",
         "*://mixamo.com/*"
       ]
