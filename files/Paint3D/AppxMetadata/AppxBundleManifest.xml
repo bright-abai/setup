@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Bundle SchemaVersion="4.0" IgnorableNamespaces="b4" xmlns="http://schemas.microsoft.com/appx/2013/bundle" xmlns:b4="http://schemas.microsoft.com/appx/2018/bundle">
+	<Identity Name="Microsoft.MSPaint" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="2019.408.1721.0"/>
+	<Packages>
+		<Package Type="application" Version="5.1904.8017.0" Architecture="arm" FileName="PaintStudio.View_5.1904.8017.0_ARM.appx" Offset="69" Size="23183531">
+			<Resources>
+				<Resource Language="EN-US"/>
+				<Resource Language="EN-GB"/>
+				<Resource Language="AF-ZA"/>
+				<Resource Language="AM-ET"/>
+				<Resource Language="AR-SA"/>
+				<Resource Language="AZ-LATN-AZ"/>
+				<Resource Language="BE-BY"/>
+				<Resource Language="BG-BG"/>
+				<Resource Language="BN-BD"/>
+				<Resource Language="CA-ES"/>
+				<Resource Language="CS-CZ"/>
+				<Resource Language="DA-DK"/>
+				<Resource Language="DE-DE"/>
+				<Resource Language="EL-GR"/>
+				<Resource Language="ES-ES"/>
+				<Resource Language="ES-MX"/>
+				<Resource Language="ET-EE"/>
+				<Resource Language="EU-ES"/>
+				<Resource Language="FA-IR"/>
+				<Resource Language="FI-FI"/>
+				<Resource Language="FIL-PH"/>
+				<Resource Language="FR-CA"/>
+				<Resource Language="FR-FR"/>
+				<Resource Language="GL-ES"/>
+				<Resource Language="HA-LATN-NG"/>
+				<Resource Language="HE-IL"/>
+				<Resource Language="HI-IN"/>
+				<Resource Language="HR-HR"/>
+				<Resource Language="HU-HU"/>
+				<Resource Language="ID-ID"/>
+				<Resource Language="IS-IS"/>
+				<Resource Language="IT-IT"/>
+				<Resource Language="JA-JP"/>
+				<Resource Language="KK-KZ"/>
+				<Resource Language="KM-KH"/>
+				<Resource Language="KN-IN"/>
+				<Resource Language="KO-KR"/>
+				<Resource Language="LO-LA"/>
+				<Resource Language="LT-LT"/>
+				<Resource Language="LV-LV"/>
+				<Resource Language="MK-MK"/>
+				<Resource Language="ML-IN"/>
+				<Resource Language="MS-MY"/>
+				<Resource Language="NB-NO"/>
+				<Resource Language="NL-NL"/>
+				<Resource Language="PL-PL"/>
+				<Resource Language="PT-BR"/>
+				<Resource Language="PT-PT"/>
+				<Resource Language="RO-RO"/>
+				<Resource Language="RU-RU"/>
+				<Resource Language="SK-SK"/>
+				<Resource Language="SL-SI"/>
+				<Resource Language="SQ-AL"/>
+				<Resource Language="SR-LATN-RS"/>
+				<Resource Language="SV-SE"/>
+				<Resource Language="SW-KE"/>
+				<Resource Language="TA-IN"/>
+				<Resource Language="TE-IN"/>
+				<Resource Language="TH-TH"/>
+				<Resource Language="TR-TR"/>
+				<Resource Language="UK-UA"/>
+				<Resource Language="UZ-LATN-UZ"/>
+				<Resource Language="VI-VN"/>
+				<Resource Language="ZH-CN"/>
+				<Resource Language="ZH-TW"/>
+			</Resources>
+			<b4:Dependencies>
+				<b4:TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+				<b4:TargetDeviceFamily Name="Windows.Team" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+			</b4:Dependencies>
+		</Package>
+		<Package Type="application" Version="5.1904.8017.0" Architecture="x86" FileName="PaintStudio.View_5.1904.8017.0_Win32.appx" Offset="23183695" Size="22121744">
+			<Resources>
+				<Resource Language="EN-US"/>
+				<Resource Language="EN-GB"/>
+				<Resource Language="AF-ZA"/>
+				<Resource Language="AM-ET"/>
+				<Resource Language="AR-SA"/>
+				<Resource Language="AZ-LATN-AZ"/>
+				<Resource Language="BE-BY"/>
+				<Resource Language="BG-BG"/>
+				<Resource Language="BN-BD"/>
+				<Resource Language="CA-ES"/>
+				<Resource Language="CS-CZ"/>
+				<Resource Language="DA-DK"/>
+				<Resource Language="DE-DE"/>
+				<Resource Language="EL-GR"/>
+				<Resource Language="ES-ES"/>
+				<Resource Language="ES-MX"/>
+				<Resource Language="ET-EE"/>
+				<Resource Language="EU-ES"/>
+				<Resource Language="FA-IR"/>
+				<Resource Language="FI-FI"/>
+				<Resource Language="FIL-PH"/>
+				<Resource Language="FR-CA"/>
+				<Resource Language="FR-FR"/>
+				<Resource Language="GL-ES"/>
+				<Resource Language="HA-LATN-NG"/>
+				<Resource Language="HE-IL"/>
+				<Resource Language="HI-IN"/>
+				<Resource Language="HR-HR"/>
+				<Resource Language="HU-HU"/>
+				<Resource Language="ID-ID"/>
+				<Resource Language="IS-IS"/>
+				<Resource Language="IT-IT"/>
+				<Resource Language="JA-JP"/>
+				<Resource Language="KK-KZ"/>
+				<Resource Language="KM-KH"/>
+				<Resource Language="KN-IN"/>
+				<Resource Language="KO-KR"/>
+				<Resource Language="LO-LA"/>
+				<Resource Language="LT-LT"/>
+				<Resource Language="LV-LV"/>
+				<Resource Language="MK-MK"/>
+				<Resource Language="ML-IN"/>
+				<Resource Language="MS-MY"/>
+				<Resource Language="NB-NO"/>
+				<Resource Language="NL-NL"/>
+				<Resource Language="PL-PL"/>
+				<Resource Language="PT-BR"/>
+				<Resource Language="PT-PT"/>
+				<Resource Language="RO-RO"/>
+				<Resource Language="RU-RU"/>
+				<Resource Language="SK-SK"/>
+				<Resource Language="SL-SI"/>
+				<Resource Language="SQ-AL"/>
+				<Resource Language="SR-LATN-RS"/>
+				<Resource Language="SV-SE"/>
+				<Resource Language="SW-KE"/>
+				<Resource Language="TA-IN"/>
+				<Resource Language="TE-IN"/>
+				<Resource Language="TH-TH"/>
+				<Resource Language="TR-TR"/>
+				<Resource Language="UK-UA"/>
+				<Resource Language="UZ-LATN-UZ"/>
+				<Resource Language="VI-VN"/>
+				<Resource Language="ZH-CN"/>
+				<Resource Language="ZH-TW"/>
+			</Resources>
+			<b4:Dependencies>
+				<b4:TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+				<b4:TargetDeviceFamily Name="Windows.Team" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+			</b4:Dependencies>
+		</Package>
+		<Package Type="application" Version="5.1904.8017.0" Architecture="x64" FileName="PaintStudio.View_5.1904.8017.0_x64.appx" Offset="45305532" Size="24930447">
+			<Resources>
+				<Resource Language="EN-US"/>
+				<Resource Language="EN-GB"/>
+				<Resource Language="AF-ZA"/>
+				<Resource Language="AM-ET"/>
+				<Resource Language="AR-SA"/>
+				<Resource Language="AZ-LATN-AZ"/>
+				<Resource Language="BE-BY"/>
+				<Resource Language="BG-BG"/>
+				<Resource Language="BN-BD"/>
+				<Resource Language="CA-ES"/>
+				<Resource Language="CS-CZ"/>
+				<Resource Language="DA-DK"/>
+				<Resource Language="DE-DE"/>
+				<Resource Language="EL-GR"/>
+				<Resource Language="ES-ES"/>
+				<Resource Language="ES-MX"/>
+				<Resource Language="ET-EE"/>
+				<Resource Language="EU-ES"/>
+				<Resource Language="FA-IR"/>
+				<Resource Language="FI-FI"/>
+				<Resource Language="FIL-PH"/>
+				<Resource Language="FR-CA"/>
+				<Resource Language="FR-FR"/>
+				<Resource Language="GL-ES"/>
+				<Resource Language="HA-LATN-NG"/>
+				<Resource Language="HE-IL"/>
+				<Resource Language="HI-IN"/>
+				<Resource Language="HR-HR"/>
+				<Resource Language="HU-HU"/>
+				<Resource Language="ID-ID"/>
+				<Resource Language="IS-IS"/>
+				<Resource Language="IT-IT"/>
+				<Resource Language="JA-JP"/>
+				<Resource Language="KK-KZ"/>
+				<Resource Language="KM-KH"/>
+				<Resource Language="KN-IN"/>
+				<Resource Language="KO-KR"/>
+				<Resource Language="LO-LA"/>
+				<Resource Language="LT-LT"/>
+				<Resource Language="LV-LV"/>
+				<Resource Language="MK-MK"/>
+				<Resource Language="ML-IN"/>
+				<Resource Language="MS-MY"/>
+				<Resource Language="NB-NO"/>
+				<Resource Language="NL-NL"/>
+				<Resource Language="PL-PL"/>
+				<Resource Language="PT-BR"/>
+				<Resource Language="PT-PT"/>
+				<Resource Language="RO-RO"/>
+				<Resource Language="RU-RU"/>
+				<Resource Language="SK-SK"/>
+				<Resource Language="SL-SI"/>
+				<Resource Language="SQ-AL"/>
+				<Resource Language="SR-LATN-RS"/>
+				<Resource Language="SV-SE"/>
+				<Resource Language="SW-KE"/>
+				<Resource Language="TA-IN"/>
+				<Resource Language="TE-IN"/>
+				<Resource Language="TH-TH"/>
+				<Resource Language="TR-TR"/>
+				<Resource Language="UK-UA"/>
+				<Resource Language="UZ-LATN-UZ"/>
+				<Resource Language="VI-VN"/>
+				<Resource Language="ZH-CN"/>
+				<Resource Language="ZH-TW"/>
+			</Resources>
+			<b4:Dependencies>
+				<b4:TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+				<b4:TargetDeviceFamily Name="Windows.Team" MinVersion="10.0.16299.0" MaxVersionTested="10.0.17134.0"/>
+			</b4:Dependencies>
+		</Package>
+	</Packages>
+</Bundle>
