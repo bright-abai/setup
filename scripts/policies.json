@@ -20,6 +20,10 @@
         "name": "Началка",
         "children": [
           {
+            "name": "Scratch",
+            "url": "https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
+          },
+          {
             "name": "Умные игры",
             "url": "https://igraemsa.ru"
           },
@@ -246,6 +250,7 @@
         "*://*.edclub.com/*",
         "*://pazlyonline.com/*",
         "*://*.247chess.com/*",
+        "*://scratch.mit.edu/*",
 
         "__comment_search",
         "*://*.wikipedia.org/*",
