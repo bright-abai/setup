@@ -48,8 +48,9 @@ function Set-Permissions {
     Set-Acl $userImage $acl
 }
 
-$userImagePath = Read-Host "Enter the path to the user image (e.g., C:\Control\images\userImage.jpg)"
-$adminImagePath = [System.IO.Path]::Combine($controlFolder, "images", "bright.jpg")
+$userImageName = Read-Host "Enter the name of student image"
+$userImagePath = [System.IO.Path]::Combine($controlFolder, $userImageName)
+$adminImagePath = [System.IO.Path]::Combine($controlFolder, "bright.jpg")
 
 if (-Not (Test-Path $userImagePath)) {
     Write-Host "User image path does not exist. Please check the path."
