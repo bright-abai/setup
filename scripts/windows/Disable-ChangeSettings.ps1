@@ -25,8 +25,6 @@ $regsUser = @(
     @("software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "1")
 )
 
-$studentName = (Get-LocalUser | Where-Object { $_.Name -like 'ST-*' } | Select-Object -ExpandProperty Name)
-
 Edit-RegistriesMachine -Regs $regsMachine
-Edit-RegistriesUser -UserName $studentName -Regs $regsUser
-Edit-RegistriesUser -UserName "Admin" -Regs $regsUser
+Edit-RegistriesUser -UserName "student" -Regs $regsUser
+Edit-RegistriesUser -UserName "teacher" -Regs $regsUser
