@@ -2,6 +2,7 @@
   "policies": {
     "OverrideFirstRunPage": "",
     "OverridePostUpdatePage": "",
+    "DisableFirefoxAccounts": false,
     "Homepage": {
       "URL": "about:newtab",
       "Locked": true,
