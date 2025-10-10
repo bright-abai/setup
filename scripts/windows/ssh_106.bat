@@ -7,6 +7,7 @@ echo.
 
 REM Change Port 22 to Port 2222 in sshd_config
 powershell -Command "(Get-Content 'C:\ProgramData\ssh\sshd_config') -replace '^#?Port 22', 'Port 2222' | Set-Content 'C:\ProgramData\ssh\sshd_config'"
+powershell -Command "(Get-Content 'C:\ProgramData\ssh\sshd_config') -replace '^#?PubkeyAuthentication yes', 'PubkeyAuthentication yes' | Set-Content 'C:\ProgramData\ssh\sshd_config'"
 echo Port changed to 2222
 
 REM Create firewall rule
@@ -27,8 +28,8 @@ if not exist "C:\Users\teacher\.ssh" mkdir "C:\Users\teacher\.ssh"
 echo ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIER7xxvlsEfcGaSHu/+tRDB93cyZvaGeQBmICSonneh5 teacher@TR-106 > "C:\Users\teacher\.ssh\authorized_keys"
 
 REM Set permissions
-icacls "C:\Users\teacher\.ssh" /inheritance:r /grant teacher:F >nul 2>&1
-icacls "C:\Users\teacher\.ssh\authorized_keys" /inheritance:r /grant teacher:F >nul 2>&1
+icacls "C:\Users\teacher\.ssh" /inheritance:r /grant "teacher:F" /grant "SYSTEM:F" >nul 2>&1
+icacls "C:\Users\teacher\.ssh\authorized_keys" /inheritance:r /grant teacher:F /grant "SYSTEM:F" >nul 2>&1
 echo Permissions configured
 
 echo.
