@@ -1,9 +1,10 @@
 # For each student Windows machine
 
-1. Copy bat/hosts to C:\Windows\System32\drivers\etc\
-2. Run bat/sshserver.bat
-3. Run bat/ssh_[104 or 106].bat
-
+1. Apply policies.json to firefox, so no other browser is installed and it is not possible to download a new one
+2. Run ssh_server.bat
+3. Run ssh_[104 or 106].bat
+4. Run Apply-Wallpaper.ps1 with powershell, supplying a student image to set
+5. Run Disable-ChangeSettings.ps1
 
 
 
@@ -16,11 +17,12 @@ Change `Port 22` to `Port 2222`
 Rename-LocalUser -Name "Admin" -NewName "teacher"  ; net stop sshd ; net start sshd
 ```
 
-# auth keys
-1. Manually Copy the Public Key to the Target Windows Machine
-```
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJgqenzvSp5q3Riv7kguB86krzHMWROfxGj/nnxlH884 teacher@TR-104
-```
+# Misc
+
 ```
 notepad C:\Users\teacher\.ssh\authorized_keys & icacls "C:\Users\teacher\.ssh" /inheritance:r /grant teacher:F & icacls "C:\Users\teacher\.ssh\authorized_keys" /inheritance:r /grant teacher:F
+```
+
+```
+wmic UserAccount where Name='ST-!suffix!' set PasswordExpires=False
 ```
