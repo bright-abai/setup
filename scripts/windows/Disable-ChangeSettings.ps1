@@ -9,7 +9,8 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $regsMachine = @(
     @("HKLM:\software\microsoft\policymanager\default\settings\allowlanguage", "value"               , "DWord", "0"),
-    @("HKLM:\software\policies\microsoft\windows\personalization"            , "NoChangingLockScreen", "DWord", "1")
+    @("HKLM:\software\policies\microsoft\windows\personalization"            , "NoChangingLockScreen", "DWord", "1"),
+    @("HKLM:\software\policies\microsoft\windows\explorer       "            , "NoPinningToTaskbar"  , "DWord", "1")
 )
 
 $regsUser = @(
