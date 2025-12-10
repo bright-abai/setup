@@ -22,7 +22,8 @@ $regsUser = @(
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoMovingBands"          , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoActiveDesktop"        , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\activedesktop" , "NoChangingWallPaper"    , "DWord", "0"),
-    @("software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "0")
+    @("software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "0"),
+    @("software\policies\microsoft\windows\explorer"                     , "NoPinningToTaskbar"     , "DWord", "0")
 )
 
 Edit-RegistriesMachine -Regs $regsMachine
