@@ -8,9 +8,6 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Install OpenSSH Server
-powershell -command "Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' | Add-WindowsCapability -Online"
-
 :: Add firewall rule for SSH if it doesn't already exist
 powershell -Command "if (-Not (Get-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -ErrorAction SilentlyContinue)) { New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 }"
 
