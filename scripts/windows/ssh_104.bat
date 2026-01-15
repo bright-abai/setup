@@ -1,16 +1,16 @@
 @echo off
-REM SSH Configuration Script for Windows 10
+REM SSH Configuration Script for Windows 11
 REM Run as Administrator
+REM The date of applying is 15.01.2026
 
 echo Configuring SSH...
 echo.
 
 REM Allow PubkeyAuth
 powershell -Command "(Get-Content 'C:\ProgramData\ssh\sshd_config') -replace '^#?PubkeyAuthentication yes', 'PubkeyAuthentication yes' | Set-Content 'C:\ProgramData\ssh\sshd_config'"
-echo Port changed to 2222
 
 REM Create firewall rule
-powershell -Command "New-NetFirewallRule -DisplayName 'SSH Port 2222' -Direction Inbound -LocalPort 2222 -Protocol TCP -Action Allow" >nul 2>&1
+powershell -Command "New-NetFirewallRule -DisplayName 'SSH Port 22' -Direction Inbound -LocalPort 22 -Protocol TCP -Action Allow" >nul 2>&1
 echo Firewall rule created
 
 REM Restart SSH service
