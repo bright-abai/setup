@@ -5,24 +5,10 @@
 3. Download and copy to `C:\Control` [firefox_blacklist_update](https://github.com/bright-abai/setup/blob/main/scripts/windows/Apply_BlockFromGithub.ps1)
 4. Perform Registry change using `Apply-Wallpaper.ps1` and `Disable_ChangeSettings`
 
+# On the teacher machine
 
-# Misc
+1. `ssh-keygen -t ed25519` [^1] (no passphrase is advised, because there was one time when I mistyped the password twice)
+2. `ssh-add C:\Users\Abai\.ssh\id_ed25519`
+3. Run `ssh teacher@student-104-1` or `ssh teacher@192.168.104.101` to connnect to the first computer in 104 cabinet
 
-```
-notepad C:\Users\teacher\.ssh\authorized_keys & icacls "C:\Users\teacher\.ssh" /inheritance:r /grant teacher:F & icacls "C:\Users\teacher\.ssh\authorized_keys" /inheritance:r /grant teacher:F
-```
-
-```
-wmic UserAccount where Name='ST-!suffix!' set PasswordExpires=False
-```
-
-
-# Manual setup of port 2222 on dual boot machine on Win10
-```
-notepad C:\ProgramData\ssh\sshd_config & New-NetFirewallRule -DisplayName "SSH Port 2222" -Direction Inbound -LocalPort 2222 -Protocol TCP -Action Allow
-```
-Change `Port 22` to `Port 2222`
-```
-Rename-LocalUser -Name "Admin" -NewName "teacher"  ; net stop sshd ; net start sshd
-```
-
+[^1]: this keymethod provides the minimal size pubkey
