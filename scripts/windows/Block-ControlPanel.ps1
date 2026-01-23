@@ -8,4 +8,4 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 . "$PSScriptRoot\LibEdit-Registries.ps1"
 
 # The reason is to allow teacher access to the control panel
-Edit-RegistriesUser -UserName "student" -Regs @(@("software\microsoft\windows\currentversion\policies\explorer", "NoControlPanel", "DWord", "1"))
+Edit-RegistriesUser -UserName "student" -Regs @(@("software\microsoft\windows\currentversion\policies\explorer", "NoControlPanel", "DWord", "1"), "")
