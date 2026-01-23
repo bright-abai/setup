@@ -18,7 +18,6 @@ $regsUser = @(
     @("software\microsoft\windows\currentversion\policies\system"        , "NoColorChoice"          , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoThemesTab"            , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoDesktop"              , "DWord", "0"),
-    @("software\microsoft\windows\currentversion\policies\explorer"      , "NoControlPanel"         , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoCloseDragDropBands"   , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoMovingBands"          , "DWord", "0"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoActiveDesktop"        , "DWord", "0"),
