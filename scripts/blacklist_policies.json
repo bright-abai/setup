@@ -1,354 +1,355 @@
 {
-    "policies": {
-        "OverrideFirstRunPage": "",
-        "OverridePostUpdatePage": "",
-        "DisableFirefoxAccounts": false,
-        "Homepage": {
-            "URL": "about:newtab",
-            "Locked": true,
-            "StartPage": "homepage"
-        },
-        "ExtensionSettings": {
-            "*": {
-                "installation_mode": "blocked"
-            }
-        },
-        "ManagedBookmarks": [
-            {
-                "toplevel_name": "Bright International School"
-            },
-            {
-                "name": "Primary",
-                "children": [
-                    {
-                        "name": "Scratch",
-                        "url": "https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
-                    },
-                    {
-                        "name": "Typing typerun",
-                        "url": "https://typerun.top/#rus_adv"
-                    },
-                    {
-                        "name": "Typing edclub",
-                        "url": "https://www.edclub.com/sportal/program-3.game"
-                    },
-                    {
-                        "name": "Puzzles",
-                        "url": "https://pazlyonline.com"
-                    },
-                    {
-                        "name": "247chess",
-                        "url": "https://www.247chess.com"
-                    }
-                ]
-            },
-            {
-                "name": "Secondary",
-                "children": [
-                    {
-                        "name": "Search Reference",
-                        "children": [
-                            {
-                                "name": "Wikipedia",
-                                "url": "https://www.wikipedia.org"
-                            },
-                            {
-                                "name": "Reddit",
-                                "url": "https://www.reddit.com"
-                            },
-                            {
-                                "name": "English Dictionary",
-                                "url": "https://wooordhunt.com"
-                            },
-                            {
-                                "name": "English Reading",
-                                "url": "https://paragraph77.ru/"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Computer Science Theory",
-                        "children": [
-                            {
-                                "name": "How does Internet work?",
-                                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work"
-                            },
-                            {
-                                "name": "Your first website",
-                                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website"
-                            },
-                            {
-                                "name": "C++ Reference",
-                                "url": "https://www.cplusplus.com"
-                            },
-                            {
-                                "name": "GeeksforGeeks",
-                                "url": "https://www.geeksforgeeks.org"
-                            },
-                            {
-                                "name": "Blender 3D Docs",
-                                "url": "https://docs.blender.org/manual/en/latest/"
-                            },
-                            {
-                                "name": "Godot Engine Docs",
-                                "url": "https://godotengine.org"
-                            },
-                            {
-                                "name": "Renpy Visual Novel Engine",
-                                "url": "https://renpy.org/doc/html/quickstart.html"
-                            },
-                            {
-                                "name": "Python Lower Secondary",
-                                "url": "https://pyflo.net/"
-                            },
-                            {
-                                "name": "Java JetBrains Course",
-                                "url": "https://hyperskill.org/courses/17-java-developer"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Coding Practice Version Control",
-                        "children": [
-                            {
-                                "name": "OnlineGDB Compiler",
-                                "url": "https://www.onlinegdb.com"
-                            },
-                            {
-                                "name": "Online Python IDE",
-                                "url": "https://www.online-python.com"
-                            },
-                            {
-                                "name": "Beecrowd (URI) Problems",
-                                "url": "https://www.beecrowd.com"
-                            },
-                            {
-                                "name": "Codeforces Competitions",
-                                "url": "https://codeforces.com"
-                            },
-                            {
-                                "name": "Shadertoy: Shader Programming",
-                                "url": "https://www.shadertoy.com"
-                            },
-                            {
-                                "name": "GitHub",
-                                "url": "https://github.com"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Tools",
-                        "children": [
-                            {
-                                "name": "Claude AI",
-                                "url": "https://claude.ai"
-                            },
-                            {
-                                "name": "FreeConvert",
-                                "url": "https://www.freeconvert.com"
-                            },
-                            {
-                                "name": "ShortURL",
-                                "url": "https://shorturl.at"
-                            },
-                            {
-                                "name": "WordPress",
-                                "url": "https://wordpress.com"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Creative Resources",
-                        "children": [
-                            {
-                                "name": "Images",
-                                "children": [
-                                    {
-                                        "name": "Freepik",
-                                        "url": "https://www.freepik.com"
-                                    },
-                                    {
-                                        "name": "Pexels",
-                                        "url": "https://www.pexels.com"
-                                    },
-                                    {
-                                        "name": "Unsplash",
-                                        "url": "https://unsplash.com"
-                                    },
-                                    {
-                                        "name": "Pixabay",
-                                        "url": "https://pixabay.com"
-                                    },
-                                    {
-                                        "name": "Flickr",
-                                        "url": "https://www.flickr.com"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Audio",
-                                "children": [
-                                    {
-                                        "name": "Freesound",
-                                        "url": "https://freesound.org"
-                                    },
-                                    {
-                                        "name": "SoundCloud",
-                                        "url": "https://soundcloud.com"
-                                    },
-                                    {
-                                        "name": "Zapsplat",
-                                        "url": "https://www.zapsplat.com"
-                                    },
-                                    {
-                                        "name": "Bensound",
-                                        "url": "https://www.bensound.com"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "3D Models",
-                                "children": [
-                                    {
-                                        "name": "Mixamo Characters",
-                                        "url": "https://www.mixamo.com"
-                                    },
-                                    {
-                                        "name": "TurboSquid",
-                                        "url": "https://www.turbosquid.com"
-                                    },
-                                    {
-                                        "name": "Sketchfab",
-                                        "url": "https://sketchfab.com"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Design Tools",
-                                "children": [
-                                    {
-                                        "name": "Canva",
-                                        "url": "https://www.canva.com"
-                                    },
-                                    {
-                                        "name": "Figma",
-                                        "url": "https://www.figma.com"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "WebsiteFilter": {
-            "Block": [
-                "*://*.1v1.lol/*",
-                "*://*.1v1.me/*",
-                "*://*.1v1lol.me/*",
-                "*://*.1v1lol.org/*",
-                "*://*.ad9g.com/*",
-                "*://*.akinator.com/*",
-                "*://*.all-cs.ru/*",
-                "*://*.allwebgames.com/*",
-                "*://*.appleworm.io/*",
-                "*://*.badtimesimulator.io/*",
-                "*://*.bluestacks.com/*",
-                "*://*.capybara-game.com/*",
-                "*://*.chatgpt.com/*",
-                "*://*.crazycattle3d.io/*",
-                "*://*.crazygames.com.ua/*",
-                "*://*.crazygames.com/*",
-                "*://*.crazygames.ru/*",
-                "*://*.cs16-go.ru/*",
-                "*://*.cs16nextclient.com/*",
-                "*://*.cs-down.com/*",
-                "*://*.cs-love.net/*",
-                "*://*.cs-valve.ru/*",
-                "*://*.cs16planet.ru/*",
-                "*://*.csrus.net/*",
-                "*://*.dinosaur-game.io/*",
-                "*://*.download-cs.net/*",
-                "*://*.eaglecraft.com/*",
-                "*://*.eaglercraft.com/*",
-                "*://*.eaglercraft.ir/*",
-                "*://*.fnafgame.io/*",
-                "*://*.fngames.io/*",
-                "*://*.freegames.com/*",
-                "*://*.gamaverse.ru /*",
-                "*://*.gamedistribution.com/*",
-                "*://*.gameforge.com/*",
-                "*://*.gameplayer.ru/*",
-                "*://*.geodash.org/*",
-                "*://*.geometrydash.game/*",
-                "*://*.geometrydash-lite.com/*",
-                "*://*.geometrydash-lite.io/*",
-                "*://*.geometrydashfullversion.io/*",
-                "*://*.geometrygame.org/*",
-                "*://*.geometry-games.io/*",
-                "*://*.girlsgogames.com/*",
-                "*://*.girlsgogames.ru/*",
-                "*://*.granny.gg/*",
-                "*://*.horrorgames.io/*",
-                "*://*.igroutka.ru/*",
-                "*://*.igru.net/*",
-                "*://*.koyso.com/*",
-                "*://*.krunker.io/*",
-                "*://*.llaun.ch/*",
-                "*://*.mafa.com/*",
-                "*://*.mcpehub.org/*",
-                "*://*.megaigry.ru/*",
-                "*://*.melonplayground.io/*",
-                "*://*.melon-playground.io/*",
-                "*://*.minecraft-inside.ru/*",
-                "*://*.modscraft.net/*",
-                "*://*.now.gg/*",
-                "*://*.play-cs.com/*",
-                "*://*.playhop.com/*",
-                "*://*.poki.com/*",
-                "*://*.ps2bioshub.com/*",
-                "*://*.quickdraw.withgoogle.com/*",
-                "*://*.roblox.com/*",
-                "*://*.ru.y8.com/*",
-                "*://*.ru-cs.ru/*",
-                "*://*.rustore.ru/*",
-                "*://*.rutube.ru/*",
-                "*://*.slither.io/*",
-                "*://*.slithergame.io/*",
-                "*://*.slitheriogame.io/*",
-                "*://*.silvergames.com/*",
-                "*://*.slopegame-online.com/*",
-                "*://*.soccerrandom.io/*",
-                "*://*.spruki.com/*",
-                "*://*.sprunki.io/*",
-                "*://*.stealbrainrotio.io/*",
-                "*://*.stickmanhook2.io/*",
-                "*://*.strelyaj.ru/*",
-                "*://*.survivalrace.net/*",
-                "*://*.survival-race.io/*",
-                "*://*.survivalrace2.io/*",
-                
-                "*://*.sw.com.tw/*",
-                "*://*.territorial.io/*",
-                "*://*.tiktok.com/*",
-                "*://*.tlauncher.org/*",
-                "*://*.topgames.com/*",
-                "*://*.topgames/*",
-                "*://*.topgames/*",
-                "*://*.trashbox.ru/*",
-                "*://*.tsarvar.com/*",
-                "*://*.twoplayergames.org/*",
-                "*://*.ultrakill.en.download.it/*",
-                "*://*.uptodown.com/*",
-                "*://*.vseigru.net/*",
-                "*://*.warface.com/*",
-                "*://*.x-launcher.com/*",
-                "*://*.xlauncher.org/*",
-                "*://*.xmcl.app/*",
-                "*://*.yandex.com/*",
-                "*://*.yandex.ru/*",
-                "*://*.youtube.com/*"
+  "policies": {
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "DisableFirefoxAccounts": false,
+    "Homepage": {
+      "URL": "about:newtab",
+      "Locked": true,
+      "StartPage": "homepage"
+    },
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked"
+      }
+    },
+    "ManagedBookmarks": [
+      {
+        "toplevel_name": "Bright International School"
+      },
+      {
+        "name": "Primary",
+        "children": [
+          {
+            "name": "Scratch",
+            "url": "https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
+          },
+          {
+            "name": "Typing typerun",
+            "url": "https://typerun.top/#rus_adv"
+          },
+          {
+            "name": "Typing edclub",
+            "url": "https://www.edclub.com/sportal/program-3.game"
+          },
+          {
+            "name": "Puzzles",
+            "url": "https://pazlyonline.com"
+          },
+          {
+            "name": "247chess",
+            "url": "https://www.247chess.com"
+          }
+        ]
+      },
+      {
+        "name": "Secondary",
+        "children": [
+          {
+            "name": "Search Reference",
+            "children": [
+              {
+                "name": "Wikipedia",
+                "url": "https://www.wikipedia.org"
+              },
+              {
+                "name": "Reddit",
+                "url": "https://www.reddit.com"
+              },
+              {
+                "name": "English Dictionary",
+                "url": "https://wooordhunt.com"
+              },
+              {
+                "name": "English Reading",
+                "url": "https://paragraph77.ru/"
+              }
             ]
-        }
+          },
+          {
+            "name": "Computer Science Theory",
+            "children": [
+              {
+                "name": "How does Internet work?",
+                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work"
+              },
+              {
+                "name": "Your first website",
+                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website"
+              },
+              {
+                "name": "C++ Reference",
+                "url": "https://www.cplusplus.com"
+              },
+              {
+                "name": "GeeksforGeeks",
+                "url": "https://www.geeksforgeeks.org"
+              },
+              {
+                "name": "Blender 3D Docs",
+                "url": "https://docs.blender.org/manual/en/latest/"
+              },
+              {
+                "name": "Godot Engine Docs",
+                "url": "https://godotengine.org"
+              },
+              {
+                "name": "Renpy Visual Novel Engine",
+                "url": "https://renpy.org/doc/html/quickstart.html"
+              },
+              {
+                "name": "Python Lower Secondary",
+                "url": "https://pyflo.net/"
+              },
+              {
+                "name": "Java JetBrains Course",
+                "url": "https://hyperskill.org/courses/17-java-developer"
+              }
+            ]
+          },
+          {
+            "name": "Coding Practice Version Control",
+            "children": [
+              {
+                "name": "OnlineGDB Compiler",
+                "url": "https://www.onlinegdb.com"
+              },
+              {
+                "name": "Online Python IDE",
+                "url": "https://www.online-python.com"
+              },
+              {
+                "name": "Beecrowd (URI) Problems",
+                "url": "https://www.beecrowd.com"
+              },
+              {
+                "name": "Codeforces Competitions",
+                "url": "https://codeforces.com"
+              },
+              {
+                "name": "Shadertoy: Shader Programming",
+                "url": "https://www.shadertoy.com"
+              },
+              {
+                "name": "GitHub",
+                "url": "https://github.com"
+              }
+            ]
+          },
+          {
+            "name": "Tools",
+            "children": [
+              {
+                "name": "Claude AI",
+                "url": "https://claude.ai"
+              },
+              {
+                "name": "FreeConvert",
+                "url": "https://www.freeconvert.com"
+              },
+              {
+                "name": "ShortURL",
+                "url": "https://shorturl.at"
+              },
+              {
+                "name": "WordPress",
+                "url": "https://wordpress.com"
+              }
+            ]
+          },
+          {
+            "name": "Creative Resources",
+            "children": [
+              {
+                "name": "Images",
+                "children": [
+                  {
+                    "name": "Freepik",
+                    "url": "https://www.freepik.com"
+                  },
+                  {
+                    "name": "Pexels",
+                    "url": "https://www.pexels.com"
+                  },
+                  {
+                    "name": "Unsplash",
+                    "url": "https://unsplash.com"
+                  },
+                  {
+                    "name": "Pixabay",
+                    "url": "https://pixabay.com"
+                  },
+                  {
+                    "name": "Flickr",
+                    "url": "https://www.flickr.com"
+                  }
+                ]
+              },
+              {
+                "name": "Audio",
+                "children": [
+                  {
+                    "name": "Freesound",
+                    "url": "https://freesound.org"
+                  },
+                  {
+                    "name": "SoundCloud",
+                    "url": "https://soundcloud.com"
+                  },
+                  {
+                    "name": "Zapsplat",
+                    "url": "https://www.zapsplat.com"
+                  },
+                  {
+                    "name": "Bensound",
+                    "url": "https://www.bensound.com"
+                  }
+                ]
+              },
+              {
+                "name": "3D Models",
+                "children": [
+                  {
+                    "name": "Mixamo Characters",
+                    "url": "https://www.mixamo.com"
+                  },
+                  {
+                    "name": "TurboSquid",
+                    "url": "https://www.turbosquid.com"
+                  },
+                  {
+                    "name": "Sketchfab",
+                    "url": "https://sketchfab.com"
+                  }
+                ]
+              },
+              {
+                "name": "Design Tools",
+                "children": [
+                  {
+                    "name": "Canva",
+                    "url": "https://www.canva.com"
+                  },
+                  {
+                    "name": "Figma",
+                    "url": "https://www.figma.com"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "WebsiteFilter": {
+      "Block": [
+        "*://*.1v1.lol/*",
+        "*://*.1v1.me/*",
+        "*://*.1v1lol.me/*",
+        "*://*.1v1lol.org/*",
+        "*://*.ad9g.com/*",
+        "*://*.akinator.com/*",
+        "*://*.all-cs.ru/*",
+        "*://*.allwebgames.com/*",
+        "*://*.appleworm.io/*",
+        "*://*.badtimesimulator.io/*",
+        "*://*.bluestacks.com/*",
+        "*://*.capybara-game.com/*",
+        "*://*.chatgpt.com/*",
+        "*://*.crazycattle3d.io/*",
+        "*://*.crazygames.com.ua/*",
+        "*://*.crazygames.com/*",
+        "*://*.crazygames.ru/*",
+        "*://*.cs16-go.ru/*",
+        "*://*.cs16nextclient.com/*",
+        "*://*.cs16planet.ru/*",
+        "*://*.cs-down.com/*",
+        "*://*.cs-love.net/*",
+        "*://*.csrus.net/*",
+        "*://*.cs-valve.ru/*",
+        "*://*.dinosaur-game.io/*",
+        "*://*.download-cs.net/*",
+        "*://*.eaglecraft.com/*",
+        "*://*.eaglercraft.com/*",
+        "*://*.eaglercraft.ir/*",
+        "*://*.fnafgame.io/*",
+        "*://*.fngames.io/*",
+        "*://*.freegames.com/*",
+        "*://*.gamaverse.ru /*",
+        "*://*.gamedistribution.com/*",
+        "*://*.gameforge.com/*",
+        "*://*.gameplayer.ru/*",
+        "*://*.geodash.org/*",
+        "*://*.geometrydash.game/*",
+        "*://*.geometrydashfullversion.io/*",
+        "*://*.geometrydash-lite.com/*",
+        "*://*.geometrydash-lite.io/*",
+        "*://*.geometrygame.org/*",
+        "*://*.geometry-games.io/*",
+        "*://*.girlsgogames.com/*",
+        "*://*.girlsgogames.ru/*",
+        "*://*.granny.gg/*",
+        "*://*.horrorgames.io/*",
+        "*://*.igroutka.ru/*",
+        "*://*.igru.net/*",
+        "*://*.koyso.com/*",
+        "*://*.krunker.io/*",
+        "*://*.llaun.ch/*",
+        "*://*.mafa.com/*",
+        "*://*.mcpehub.org/*",
+        "*://*.megaigry.ru/*",
+        "*://*.melonplayground.io/*",
+        "*://*.melon-playground.io/*",
+        "*://*.min2win.ru/*",
+        "*://*.minecraft-inside.ru/*",
+        "*://*.modscraft.net/*",
+        "*://*.now.gg/*",
+        "*://*.play-cs.com/*",
+        "*://*.playhop.com/*",
+        "*://*.poki.com/*",
+        "*://*.ps2bioshub.com/*",
+        "*://*.quickdraw.withgoogle.com/*",
+        "*://*.roblox.com/*",
+        "*://*.ru.y8.com/*",
+        "*://*.ru-cs.ru/*",
+        "*://*.rustore.ru/*",
+        "*://*.rutube.ru/*",
+        "*://*.silvergames.com/*",
+        "*://*.slither.io/*",
+        "*://*.slithergame.io/*",
+        "*://*.slitheriogame.io/*",
+        "*://*.slopegame-online.com/*",
+        "*://*.soccerrandom.io/*",
+        "*://*.spruki.com/*",
+        "*://*.sprunki.io/*",
+        "*://*.stealbrainrotio.io/*",
+        "*://*.stickmanhook2.io/*",
+        "*://*.strelyaj.ru/*",
+        "*://*.survival-race.io/*",
+        "*://*.survivalrace.net/*",
+        "*://*.survivalrace2.io/*",
+        "*://*.sw.com.tw/*",
+        "*://*.territorial.io/*",
+        "*://*.tiktok.com/*",
+        "*://*.tlauncher.org/*",
+        "*://*.topgames.com/*",
+        "*://*.topgames/*",
+        "*://*.topgames/*",
+        "*://*.torproject.org/*",
+        "*://*.trashbox.ru/*",
+        "*://*.tsarvar.com/*",
+        "*://*.twoplayergames.org/*",
+        "*://*.ultrakill.en.download.it/*",
+        "*://*.uptodown.com/*",
+        "*://*.vseigru.net/*",
+        "*://*.warface.com/*",
+        "*://*.x-launcher.com/*",
+        "*://*.xlauncher.org/*",
+        "*://*.xmcl.app/*",
+        "*://*.yandex.com/*",
+        "*://*.yandex.ru/*",
+        "*://*.youtube.com/*"
+      ]
     }
+  }
 }
