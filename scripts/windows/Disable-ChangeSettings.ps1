@@ -29,3 +29,5 @@ $regsUser = @(
 Edit-RegistriesMachine -Regs $regsMachine
 Edit-RegistriesUser -UserName "student" -Regs $regsUser
 Edit-RegistriesUser -UserName "teacher" -Regs $regsUser
+
+Edit-RegistriesUser -UserName "student" -Regs @(@("software\microsoft\windows\currentversion\policies\explorer", "NoControlPanel", "DWord", "1"), "")
