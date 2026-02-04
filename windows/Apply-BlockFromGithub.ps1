@@ -1,4 +1,4 @@
-$url = "https://raw.githubusercontent.com/bright-abai/setup/main/scripts/blacklist_policies.json"
+$url = "https://raw.githubusercontent.com/bright-abai/setup/main/firefox/blacklist_policies.json"
 $firefoxPath = "C:\Program Files\Mozilla Firefox\distribution"
 $destFile = Join-Path $firefoxPath "policies.json"
 Invoke-WebRequest -Uri $url -OutFile $destFile
