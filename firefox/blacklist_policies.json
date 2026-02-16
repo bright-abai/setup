@@ -279,6 +279,7 @@
         "*://*.download-cs.net/*",
         "*://*.eaglecraft.com/*",
         "*://*.eaglercraft.com/*",
+        "*://*.eaglercrafthub.com/*",
         "*://*.eaglercraft.ir/*",
         "*://*.eaglercraft1-8.github.io/*",
         "*://*.favdojo.com/*",
@@ -286,6 +287,7 @@
         "*://*.fnafgame.io/*",
         "*://*.fnafgames.net/*",
         "*://*.fngames.io/*",
+        "*://*.fnaf1.io/*",
         "*://*.freegames.com/*",
         "*://*.friv.com/*",
         "*://*.gamaverse.ru /*",
@@ -306,6 +308,7 @@
         "*://*.granny.gg/*",
         "*://*.granny-games.com/*",
         "*://*.horrorgames.io/*",
+        "*://*.hotgames.io/*",
         "*://*.igroutka.ru/*",
         "*://*.igru.net/*",
         "*://*.klauncher.gg/*",
@@ -347,6 +350,7 @@
         "*://*.stickmanhook2.io/*",
         "*://*.strelyaj.ru/*",
         "*://*.survival-race.io/*",
+        "*://*.survivalrace.io/*",
         "*://*.survivalrace.net/*",
         "*://*.survivalrace2.io/*",
         "*://*.sw.com.tw/*",
@@ -373,6 +377,7 @@
         "*://*.ya.ru/*",
         "*://*.yandex.com/*",
         "*://*.yandex.ru/*",
+        "*://*.yandex.uz/*",
         "*://*.yogames.cc/*"
       ]
     }
