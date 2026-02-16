@@ -312,6 +312,7 @@
         "*://*.igroutka.ru/*",
         "*://*.igru.net/*",
         "*://*.klauncher.gg/*",
+        "*://*.kirika.io/*",
         "*://*.koyso.com/*",
         "*://*.krunker.io/*",
         "*://*.llaun.ch/*",
@@ -378,7 +379,8 @@
         "*://*.yandex.com/*",
         "*://*.yandex.ru/*",
         "*://*.yandex.uz/*",
-        "*://*.yogames.cc/*"
+        "*://*.yogames.cc/*",
+        "*://*.youtube.com/*"
       ]
     }
   }
