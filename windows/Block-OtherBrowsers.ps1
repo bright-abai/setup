@@ -27,7 +27,8 @@ $regsUser = @(
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "16", "String", "minecraft.exe"),
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "17", "String", "javaw.exe"),
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "18", "String", "KLauncher.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "19", "String", "LL.exe")
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "19", "String", "LL.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "19", "String", "StartAllBackCfg.exe")
 )
 
 Edit-RegistriesUser -UserName "student" -Regs $regsUser
