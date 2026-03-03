@@ -21,6 +21,7 @@ $regsUser = @(
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoCloseDragDropBands"   , "DWord", "1"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoMovingBands"          , "DWord", "1"),
     @("software\microsoft\windows\currentversion\policies\explorer"      , "NoActiveDesktop"        , "DWord", "1"),
+    @("software\microsoft\windows\currentversion\policies\explorer")     , "NoSettaskbar"           , "DWord", "1"),
     @("software\microsoft\windows\currentversion\policies\activedesktop" , "NoChangingWallPaper"    , "DWord", "1"),
     @("software\policies\microsoft\windows\personalization"              , "NoChangingMousePointers", "DWord", "1"),
     @("software\policies\microsoft\windows\explorer"                     , "NoPinningToTaskbar"     , "DWord", "1")
