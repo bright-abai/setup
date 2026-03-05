@@ -3,242 +3,72 @@
     "OverrideFirstRunPage": "",
     "OverridePostUpdatePage": "",
     "DisableFirefoxAccounts": false,
+    "DisableSetDesktopBackground": false,
+    "DisplayBookmarksToolbar": "always",
+    "DisplayMenuBar": "never",
+    "OfferToSaveLogins": false,
+    "PrimaryPassword": false,
     "Homepage": {
       "URL": "about:newtab",
       "Locked": true,
       "StartPage": "homepage"
+    },
+    "SanitizeOnShutdown": {
+      "Cache": false,
+      "Cookies": false,
+      "FormData": false,
+      "History": false,
+      "Sessions": true,
+      "SiteSettings": false,
+      "Locked": true
+    },
+    "SearchEngines": {
+      "Default": "Google"
+    },
+    "ShowHomeButton": false,
+    "SearchSuggestEnabled": true,
+    "FirefoxSuggest": {
+      "WebSuggestions":  false,
+      "SponsoredSuggestions": false,
+      "ImproveSuggest": false,
+      "Locked": true
+    },
+    "TranslateEnabled": false,
+    "FirefoxHome": {
+      "Search": false,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "Stories": false,
+      "SponsoredPocket": false,
+      "SponsoredStories": false,
+      "Snippets": false,
+      "Locked": true
     },
     "ExtensionSettings": {
       "*": {
         "installation_mode": "blocked"
       }
     },
-    "ManagedBookmarks": [
+    "Preferences": {
+      "browser.newtabpage.activity-stream.newtabWallpapers.wallpaper": {
+        "Value": "firefox-d",
+        "Status": "locked"
+      }
+    },
+    "Bookmarks": [
       {
-        "toplevel_name": "Bright International School"
+        "Title": "Touch typing",
+        "URL": "https://typerun.top/#rus_adv"
       },
       {
-        "name": "Primary",
-        "children": [
-          {
-            "name": "Scratch",
-            "url": "https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
-          },
-          {
-            "name": "Typing typerun",
-            "url": "https://typerun.top/#rus_adv"
-          },
-          {
-            "name": "Typing edclub",
-            "url": "https://www.edclub.com/sportal/program-3.game"
-          },
-          {
-            "name": "Puzzles",
-            "url": "https://pazlyonline.com"
-          },
-          {
-            "name": "247chess",
-            "url": "https://www.247chess.com"
-          }
-        ]
+        "Title": "Images",
+        "URL": "https://unsplash.com"
       },
       {
-        "name": "Secondary",
-        "children": [
-          {
-            "name": "Search Reference",
-            "children": [
-              {
-                "name": "Wikipedia",
-                "url": "https://www.wikipedia.org"
-              },
-              {
-                "name": "Reddit",
-                "url": "https://www.reddit.com"
-              },
-              {
-                "name": "English Dictionary",
-                "url": "https://wooordhunt.com"
-              },
-              {
-                "name": "English Reading",
-                "url": "https://paragraph77.ru/"
-              }
-            ]
-          },
-          {
-            "name": "Computer Science Theory",
-            "children": [
-              {
-                "name": "How does Internet work?",
-                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work"
-              },
-              {
-                "name": "Your first website",
-                "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website"
-              },
-              {
-                "name": "C++ Reference",
-                "url": "https://www.cplusplus.com"
-              },
-              {
-                "name": "GeeksforGeeks",
-                "url": "https://www.geeksforgeeks.org"
-              },
-              {
-                "name": "Blender 3D Docs",
-                "url": "https://docs.blender.org/manual/en/latest/"
-              },
-              {
-                "name": "Godot Engine Docs",
-                "url": "https://godotengine.org"
-              },
-              {
-                "name": "Renpy Visual Novel Engine",
-                "url": "https://renpy.org/doc/html/quickstart.html"
-              },
-              {
-                "name": "Python Lower Secondary",
-                "url": "https://pyflo.net/"
-              },
-              {
-                "name": "Java JetBrains Course",
-                "url": "https://hyperskill.org/courses/17-java-developer"
-              }
-            ]
-          },
-          {
-            "name": "Coding Practice Version Control",
-            "children": [
-              {
-                "name": "OnlineGDB Compiler",
-                "url": "https://www.onlinegdb.com"
-              },
-              {
-                "name": "Online Python IDE",
-                "url": "https://www.online-python.com"
-              },
-              {
-                "name": "Beecrowd (URI) Problems",
-                "url": "https://www.beecrowd.com"
-              },
-              {
-                "name": "Codeforces Competitions",
-                "url": "https://codeforces.com"
-              },
-              {
-                "name": "Shadertoy: Shader Programming",
-                "url": "https://www.shadertoy.com"
-              },
-              {
-                "name": "GitHub",
-                "url": "https://github.com"
-              }
-            ]
-          },
-          {
-            "name": "Tools",
-            "children": [
-              {
-                "name": "Claude AI",
-                "url": "https://claude.ai"
-              },
-              {
-                "name": "FreeConvert",
-                "url": "https://www.freeconvert.com"
-              },
-              {
-                "name": "ShortURL",
-                "url": "https://shorturl.at"
-              },
-              {
-                "name": "WordPress",
-                "url": "https://wordpress.com"
-              }
-            ]
-          },
-          {
-            "name": "Creative Resources",
-            "children": [
-              {
-                "name": "Images",
-                "children": [
-                  {
-                    "name": "Freepik",
-                    "url": "https://www.freepik.com"
-                  },
-                  {
-                    "name": "Pexels",
-                    "url": "https://www.pexels.com"
-                  },
-                  {
-                    "name": "Unsplash",
-                    "url": "https://unsplash.com"
-                  },
-                  {
-                    "name": "Pixabay",
-                    "url": "https://pixabay.com"
-                  },
-                  {
-                    "name": "Flickr",
-                    "url": "https://www.flickr.com"
-                  }
-                ]
-              },
-              {
-                "name": "Audio",
-                "children": [
-                  {
-                    "name": "Freesound",
-                    "url": "https://freesound.org"
-                  },
-                  {
-                    "name": "SoundCloud",
-                    "url": "https://soundcloud.com"
-                  },
-                  {
-                    "name": "Zapsplat",
-                    "url": "https://www.zapsplat.com"
-                  },
-                  {
-                    "name": "Bensound",
-                    "url": "https://www.bensound.com"
-                  }
-                ]
-              },
-              {
-                "name": "3D Models",
-                "children": [
-                  {
-                    "name": "Mixamo Characters",
-                    "url": "https://www.mixamo.com"
-                  },
-                  {
-                    "name": "TurboSquid",
-                    "url": "https://www.turbosquid.com"
-                  },
-                  {
-                    "name": "Sketchfab",
-                    "url": "https://sketchfab.com"
-                  }
-                ]
-              },
-              {
-                "name": "Design Tools",
-                "children": [
-                  {
-                    "name": "Canva",
-                    "url": "https://www.canva.com"
-                  },
-                  {
-                    "name": "Figma",
-                    "url": "https://www.figma.com"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+        "Title": "Python Theory",
+        "URL": "https://pyflo.net"
       }
     ],
     "WebsiteFilter": {
@@ -247,8 +77,6 @@
         "*://*.1v1.me/*",
         "*://*.1v1lol.me/*",
         "*://*.1v1lol.org/*",
-        "*://*.1v1-lol.gitlab.io/*",
-        "*://*.2048game.com/*",
         "*://*.ad9g.com/*",
         "*://*.akinator.com/*",
         "*://*.all-cs.ru/*",
@@ -259,7 +87,6 @@
         "*://*.azgames.io/*",
         "*://*.badtimesimulator.io/*",
         "*://*.blockblast.game/*",
-        "*://*.blockblast2.io/*",
         "*://*.bluestacks.com/*",
         "*://*.capybara-game.com/*",
         "*://*.chatgpt.com/*",
@@ -277,36 +104,23 @@
         "*://*.cs-love.net/*",
         "*://*.csrus.net/*",
         "*://*.cs-valve.ru/*",
-        "*://*.deadshot.io/*",
-        "*://*.deeradventure.io/*",
         "*://*.dinosaur-game.io/*",
         "*://*.download.it/*",
         "*://*.download-cs.net/*",
-        "*://*.dos.zone/*",
         "*://*.eaglecraft.com/*",
         "*://*.eaglercraft.com/*",
-        "*://*.eaglercrafthub.com/*",
         "*://*.eaglercraft.ir/*",
-        "*://*.eaglercraft1-8.github.io/*",
-        "*://*.eatcells.com/*",
         "*://*.favdojo.com/*",
-        "*://*.fandom.com/*",
         "*://*.filehippo.com/*",
         "*://*.fnafgame.io/*",
         "*://*.fnafgames.net/*",
         "*://*.fngames.io/*",
-        "*://*.fnaf1.io/*",
-        "*://*.fnaf-2.io/*",
         "*://*.freegames.com/*",
         "*://*.friv.com/*",
-        "*://*.hero-wars.com/*",
-        "*://*.gamaverse.ru/*",
-        "*://*.gamejolt.com/*",
+        "*://*.gamaverse.ru /*",
         "*://*.gamedistribution.com/*",
-        "*://*.gameflare.com/*",
         "*://*.gameforge.com/*",
         "*://*.gameplayer.ru/*",
-        "*://*.gamerstates.com/*",
         "*://*.geodash.org/*",
         "*://*.geometriodash.ru/*",
         "*://*.geometrydash.game/*",
@@ -317,22 +131,16 @@
         "*://*.geometry-games.io/*",
         "*://*.geometrylitepc.io/*",
         "*://*.girlsgogames.com/*",
-        "*://*.girlgames.com/*",
         "*://*.girlsgogames.ru/*",
-        "*://*.grandgames.net/*",
         "*://*.granny.gg/*",
         "*://*.granny-games.com/*",
         "*://*.horrorgames.io/*",
-        "*://*.hotgames.io/*",
         "*://*.igroutka.ru/*",
         "*://*.igru.net/*",
-        "*://*.itch.io/*",
         "*://*.klauncher.gg/*",
-        "*://*.kirika.io/*",
         "*://*.koyso.com/*",
         "*://*.krunker.io/*",
         "*://*.llaun.ch/*",
-        "*://*.legacylauncher.ru/*",
         "*://*.lo4d.com/*",
         "*://*.mafa.com/*",
         "*://*.malavida.com/*",
@@ -343,29 +151,17 @@
         "*://*.min2win.ru/*",
         "*://*.minecraft-inside.ru/*",
         "*://*.modscraft.net/*",
-        "*://*.neocities.org/*",
         "*://*.now.gg/*",
-        "*://*.nointernetgame.com/*",
-        "*://*.pazlyigra.ru/*",
-        "*://*.papalouie.io/*",
-        "*://*.pcapp.store/*",
         "*://*.play-cs.com/*",
         "*://*.playhop.com/*",
-        "*://*.playclassic.games/*",
         "*://*.poki.com/*",
-        "*://*.pikabu.rua/*",
         "*://*.ps2bioshub.com/*",
-        "*://*.puzzlefactory.com/*",
         "*://*.quickdraw.withgoogle.com/*",
-        "*://*.razlozhi.ru/*",
-        "*://*.red-ball4.com/*",
         "*://*.roblox.com/*",
         "*://*.ru.y8.com/*",
         "*://*.ru-cs.ru/*",
         "*://*.rustore.ru/*",
         "*://*.rutube.ru/*",
-        "*://*.rilliat.ru/*",
-        "*://*.scream.com/*",
         "*://*.silvergames.com/*",
         "*://*.slither.io/*",
         "*://*.slithergame.io/*",
@@ -378,18 +174,15 @@
         "*://*.stealbrainrotio.io/*",
         "*://*.stickmanhook2.io/*",
         "*://*.strelyaj.ru/*",
-        "*://*.supermario-game.com/*",
         "*://*.survival-race.io/*",
-        "*://*.survivalrace.io/*",
         "*://*.survivalrace.net/*",
         "*://*.survivalrace2.io/*",
         "*://*.sw.com.tw/*",
         "*://*.taggame.io/*",
-        "*://*.techspot.com/*",  
+        "*://*.techspot.com/*",
         "*://*.territorial.io/*",
         "*://*.tiktok.com/*",
         "*://*.tlauncher.org/*",
-        "*://*.tlauncher.ru/*",
         "*://*.topgames.com/*",
         "*://*.topgames/*",
         "*://*.topgames/*",
@@ -402,18 +195,13 @@
         "*://*.utorrent.com/*",
         "*://*.vseigru.net/*",
         "*://*.warface.com/*",
-        "*://*.webrat.top/*",
         "*://*.x-launcher.com/*",
         "*://*.xlauncher.org/*",
         "*://*.xmcl.app/*",
         "*://*.ya.ru/*",
         "*://*.yandex.com/*",
         "*://*.yandex.ru/*",
-        "*://*.yandex.uz/*",
-        "*://*.yandex.kz/*",
-        "*://*.yandex.kg/*",
-        "*://*.yogames.cc/*",
-        "*://*.youtube.com/*"
+        "*://*.yogames.cc/*"
       ]
     }
   }
