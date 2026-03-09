@@ -201,7 +201,8 @@
         "*://*.ya.ru/*",
         "*://*.yandex.com/*",
         "*://*.yandex.ru/*",
-        "*://*.yogames.cc/*"
+        "*://*.yogames.cc/*",
+        "*://*.youtube.com/*"
       ]
     }
   }
