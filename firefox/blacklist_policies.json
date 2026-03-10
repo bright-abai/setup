@@ -121,6 +121,8 @@
         "*://*.gamedistribution.com/*",
         "*://*.gameforge.com/*",
         "*://*.gameplayer.ru/*",
+        "*://*.gamejolt.com/*",
+        "*://*.gamejolt.net/*",
         "*://*.geodash.org/*",
         "*://*.geometriodash.ru/*",
         "*://*.geometrydash.game/*",
