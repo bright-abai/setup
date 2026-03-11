@@ -18,18 +18,20 @@ $regsUser = @(
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun",  "7", "String", "safari.exe"),
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun",  "8", "String", "vivaldi.exe"),
     @("software\microsoft\windows\currentversion\policies\explorer\disallowrun",  "9", "String", "chromium.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "10", "String", "AvastBrowser.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "11", "String", "RobloxPlayerBeta.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "12", "String", "RobloxPlayer.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "13", "String", "RobloxStudioBeta.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "14", "String", "RobloxStudio.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "15", "String", "MinecraftLauncher.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "16", "String", "minecraft.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "17", "String", "javaw.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "18", "String", "KLauncher.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "19", "String", "LL.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "20", "String", "StartAllBackCfg.exe"),
-    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "21", "String", "GrannyLegacy.exe")
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "10", "String", "tesla.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "11", "String", "TeslaBrowser.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "12", "String", "AvastBrowser.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "13", "String", "RobloxPlayerBeta.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "14", "String", "RobloxPlayer.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "15", "String", "RobloxStudioBeta.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "16", "String", "RobloxStudio.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "17", "String", "MinecraftLauncher.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "18", "String", "minecraft.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "19", "String", "javaw.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "20", "String", "KLauncher.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "21", "String", "LL.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "22", "String", "StartAllBackCfg.exe"),
+    @("software\microsoft\windows\currentversion\policies\explorer\disallowrun", "23", "String", "GrannyLegacy.exe")
 )
 
 Edit-RegistriesUser -UserName "student" -Regs $regsUser
