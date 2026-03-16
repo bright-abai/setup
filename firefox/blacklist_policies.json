@@ -74,6 +74,7 @@
     "WebsiteFilter": {
       "Block": [
         "*://apps.microsoft.com/*",
+        "*://*.google.com/chrome/*",
         "*://*.1v1.lol/*",
         "*://*.1v1.me/*",
         "*://*.1v1lol.me/*",
@@ -90,6 +91,7 @@
         "*://*.blockblast.game/*",
         "*://*.bloxd.io/*",
         "*://*.bluestacks.com/*",
+        "*://*.brawlstarsonline.io/*",
         "*://*.capybara-game.com/*",
         "*://*.chatgpt.com/*",
         "*://*.cnet.com/*",
@@ -107,6 +109,7 @@
         "*://*.csrus.net/*",
         "*://*.cs-valve.ru/*",
         "*://*.dinosaur-game.io/*",
+        "*://*.deeradventure.io/*",
         "*://*.download.it/*",
         "*://*.download-cs.net/*",
         "*://*.eaglecraft.com/*",
