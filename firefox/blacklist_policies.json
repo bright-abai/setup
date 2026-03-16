@@ -74,7 +74,6 @@
     "WebsiteFilter": {
       "Block": [
         "*://apps.microsoft.com/*",
-        "*://*.google.com/chrome/*",
         "*://*.1v1.lol/*",
         "*://*.1v1.me/*",
         "*://*.1v1lol.me/*",
@@ -224,6 +223,8 @@
         "*://*.ya.ru/*",
         "*://*.yandex.com/*",
         "*://*.yandex.ru/*",
+        "*://*.yandex.uz/*",
+        "*://*.yandex.kz/*",
         "*://*.yogames.cc/*",
         "*://*.youtube.com/*"
       ]
