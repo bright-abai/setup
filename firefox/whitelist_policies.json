@@ -282,11 +282,11 @@
       "Exceptions": [
         "*://bright.edupage.org/*",
 
-        "__comment_primary",
+      
         "*://*.edclub.com/*",
         "*://scratch.mit.edu/*",
 
-        "__comment_search",
+        
         "*://*.wikipedia.org/*",
         "*://wooordhunt.com/*",
         "*://paragraph77.ru/*",
@@ -295,7 +295,7 @@
         "*://google.com/*",
         "*://*.google.com/*",
 
-        "__comment_cs_theory",
+        
         "*://developer.mozilla.org/*",
         "*://*.w3schools.com/*",
         "*://*.stackoverflow.com/*",
@@ -311,7 +311,7 @@
         "*://pyflo.net/*",
         "*://*.pyflo.net/*",
 
-        "__comment_coding",
+        
         "*://onlinegdb.com/*",
         "*://*.onlinegdb.com/*",
         "*://*.online-python.com/*",
@@ -321,7 +321,7 @@
         "*://github.com/*",
         "*://*.github.com/*",
 
-        "__comment_creative",
+        
         "*://*.freepik.com/*",
         "*://*.pexels.com/*",
         "*://*.unsplash.com/*",
@@ -341,7 +341,7 @@
         "*://*.wikipedia.org/*",
         "*://*.photopea.com/*",
 
-        "__comment_utilities",
+        
         "*://*.freeconvert.com/*",
         "*://shorturl.at/*",
         "*://*.wordpress.com/*"
