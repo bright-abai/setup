@@ -318,6 +318,7 @@
         "*://codeforces.com/*",
         "*://*.codeforces.com/*",
         "*://*.shadertoy.com/*",
+        "*://*.codepen.io/*",
         "*://github.com/*",
         "*://*.github.com/*",
 
@@ -340,6 +341,9 @@
         "*://*.cubic-bezier.com/*",
         "*://*.wikipedia.org/*",
         "*://*.photopea.com/*",
+        "*://*.tinkercad.com/*",
+        "*://*.vercel.com/*",
+        
 
         
         "*://*.freeconvert.com/*",
