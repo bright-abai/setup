@@ -3,14 +3,58 @@
     "OverrideFirstRunPage": "",
     "OverridePostUpdatePage": "",
     "DisableFirefoxAccounts": false,
+    "DisableSetDesktopBackground": false,
+    "DisplayBookmarksToolbar": "always",
+    "DisplayMenuBar": "never",
+    "OfferToSaveLogins": false,
+    "PrimaryPassword": false,
     "Homepage": {
       "URL": "about:newtab",
       "Locked": true,
       "StartPage": "homepage"
     },
+    "SanitizeOnShutdown": {
+      "Cache": false,
+      "Cookies": false,
+      "FormData": false,
+      "History": false,
+      "Sessions": true,
+      "SiteSettings": false,
+      "Locked": true
+    },
+    "SearchEngines": {
+      "Default": "Google"
+    },
+    "ShowHomeButton": false,
+    "SearchSuggestEnabled": true,
+    "FirefoxSuggest": {
+      "WebSuggestions":  false,
+      "SponsoredSuggestions": false,
+      "ImproveSuggest": false,
+      "Locked": true
+    },
+    "TranslateEnabled": false,
+    "FirefoxHome": {
+      "Search": false,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "Stories": false,
+      "SponsoredPocket": false,
+      "SponsoredStories": false,
+      "Snippets": false,
+      "Locked": true
+    },
     "ExtensionSettings": {
       "*": {
         "installation_mode": "blocked"
+      }
+    },
+    "Preferences": {
+      "browser.newtabpage.activity-stream.newtabWallpapers.wallpaper": {
+        "Value": "firefox-d",
+        "Status": "locked"
       }
     },
     "ManagedBookmarks": [
