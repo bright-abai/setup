@@ -25,20 +25,12 @@
             "url": "https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
           },
           {
-            "name": "Умные игры",
-            "url": "https://igraemsa.ru"
-          },
-          {
             "name": "Печатание",
             "url": "https://www.edclub.com/sportal/program-3.game"
           },
           {
-            "name": "Онлайн пазлы",
-            "url": "https://pazlyonline.com"
-          },
-          {
-            "name": "Шахматы",
-            "url": "https://www.247chess.com"
+            "name": "Touch typing",
+            "url": "https://typerun.top/#rus_adv"
           }
         ]
       },
@@ -247,15 +239,11 @@
         "*://bright.edupage.org/*",
 
         "__comment_primary",
-        "*://*.igraemsa.ru/*",
         "*://*.edclub.com/*",
-        "*://pazlyonline.com/*",
-        "*://*.247chess.com/*",
         "*://scratch.mit.edu/*",
 
         "__comment_search",
         "*://*.wikipedia.org/*",
-        "*://*.reddit.com/*",
         "*://wooordhunt.com/*",
         "*://paragraph77.ru/*",
         "*://gmail.com/*",
@@ -278,26 +266,16 @@
         "*://*.renpy.org/*",
         "*://pyflo.net/*",
         "*://*.pyflo.net/*",
-        "*://hyperskill.org/*",
-        "*://*.hyperskill.org/*",
 
         "__comment_coding",
         "*://onlinegdb.com/*",
         "*://*.onlinegdb.com/*",
         "*://*.online-python.com/*",
-        "*://beecrowd.com/*",
-        "*://*.beecrowd.com/*",
         "*://codeforces.com/*",
         "*://*.codeforces.com/*",
         "*://*.shadertoy.com/*",
         "*://github.com/*",
         "*://*.github.com/*",
-
-        "__comment_ai",
-        "*://claude.ai/*",
-        "*://*.claude.ai/*",
-        "*://anthropic.com/*",
-        "*://*.anthropic.com/*",
 
         "__comment_creative",
         "*://*.freepik.com/*",
@@ -315,6 +293,9 @@
         "*://*.mixamo.com/*",
         "*://*.turbosquid.com/*",
         "*://*.sketchfab.com/*",
+        "*://*.cubic-bezier.com/*",
+        "*://*.wikipedia.org/*",
+        "*://*.photopea.com/*",
 
         "__comment_utilities",
         "*://*.freeconvert.com/*",
