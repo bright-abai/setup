@@ -282,6 +282,7 @@
       "Exceptions": [
         "*://bright.edupage.org/*",
         "*://localhost/*",
+        "file://*/*",
 
       
         "*://*.edclub.com/*",
