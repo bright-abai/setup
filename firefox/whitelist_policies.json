@@ -288,6 +288,7 @@
         "*://*.edclub.com/*",
         "*://scratch.mit.edu/*",
 
+        "*://*.dafont.com/*",
         
         "*://*.wikipedia.org/*",
         "*://wooordhunt.com/*",
