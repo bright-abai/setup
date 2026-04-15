@@ -284,7 +284,7 @@
         "*://localhost/*",
         "file://*/*",
 
-        "*://*.kahoot.it/*",
+        
         "*://*.typerun.top/*",
         "*://*.edclub.com/*",
         "*://scratch.mit.edu/*",
