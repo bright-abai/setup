@@ -290,6 +290,7 @@
         "*://scratch.mit.edu/*",
 
         "*://*.dafont.com/*",
+        "*://*.pseudoeditor.com/*",
         
         "*://*.wikipedia.org/*",
         "*://wooordhunt.com/*",
