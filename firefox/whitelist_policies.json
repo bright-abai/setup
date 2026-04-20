@@ -327,6 +327,8 @@
         "*://*.codepen.io/*",
         "*://github.com/*",
         "*://*.github.com/*",
+        "*://*.github.io/*",
+        
 
         
         "*://*.freepik.com/*",
