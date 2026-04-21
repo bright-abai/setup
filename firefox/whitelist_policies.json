@@ -300,6 +300,8 @@
         "*://*.gmail.com/*",
         "*://google.com/*",
         "*://*.google.com/*",
+        "*://*.chromeexperiments.com/*",
+        "*://*.chess.com/*",
 
         
         "*://developer.mozilla.org/*",
