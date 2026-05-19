@@ -298,8 +298,8 @@
         "*://paragraph77.ru/*",
         "*://gmail.com/*",
         "*://*.gmail.com/*",
-        "*://google.com/*",
-        "*://*.google.com/*",
+        "*://google.com/search/*",
+        "*://*.google.com/search/*",
         "*://*.chromeexperiments.com/*",
         "*://*.chess.com/*",
 
