@@ -298,8 +298,7 @@
         "*://paragraph77.ru/*",
         "*://gmail.com/*",
         "*://*.gmail.com/*",
-        "*://google.com/search/*",
-        "*://*.google.com/search/*",
+        "*://*.google.com/search?*",
         "*://*.chromeexperiments.com/*",
         "*://*.chess.com/*",
 
@@ -358,7 +357,8 @@
         
         "*://*.freeconvert.com/*",
         "*://shorturl.at/*",
-        "*://*.wordpress.com/*"
+        "*://*.wordpress.com/*",
+        "*://*.play.tetris.com/*"
       ]
     }
   }
