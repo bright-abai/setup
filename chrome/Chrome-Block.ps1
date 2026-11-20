@@ -11,6 +11,7 @@ Set-ItemProperty -Path "$base\URLBlocklist" -Name "1" -Value "*" -Type String
 
 # Allowed domains (an entry also covers all its subdomains)
 $allowedUrls = @(
+    "luwo.ai",
     "typerun.top",
     "10fastfingers.com",
     "scratch.mit.edu",
